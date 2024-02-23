@@ -11,6 +11,10 @@
 Prof. Aram Apyan, Department of Physics, Brandeis University\\
 Dr. Maximilian Emanuel Goblirsch-Kolb, European Organization for Nuclear Research}
 
+\usepackage{biblatex}
+\addbibresource{Dissertation_Addepalli.bib}
+\usepackage{Dissertation_Addepalli-defs}
+
 \begin{document}
 
 \maketitlepage
@@ -51,11 +55,16 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
 \label{chap:theory}
 \input{chapters/theory}
 
+\chapter{Results}
+\label{chap:results}
+\input{chapters/results}
+
 \chapter{Conclusion}
 \label{chap:conclusion}
 \input{chapters/conclusion}
 
-\bibliographystyle{plain}
-\bibliography{references}
+%\bibliographystyle{plain}
+%\bibliography{references}
+\printbibliography
 
 \end{document}
