@@ -66,11 +66,11 @@
 \addto\captionsenglish{\renewcommand*\listtablename{\hfill LIST OF TABLES}}
 \renewcommand{\cftafterlottitle}{\hfill}
 % \setlength{\topmargin}{1in}
-\setcounter{secnumdepth}{-1}
-\renewcommand*\l@section{\@dottedtocline{1}{2em}{1.0em}}
-\renewcommand*\l@chapter{\@dottedtocline{1}{0em}{1.0em}}
-\renewcommand*\l@subsection{\@dottedtocline{1}{4em}{1.0em}}
 
+\setcounter{secnumdepth}{-1}
+%\renewcommand*\l@section{\@dottedtocline{1}{2em}{1.0em}}
+%\renewcommand*\l@chapter{\@dottedtocline{1}{0em}{1.0em}}
+%\renewcommand*\l@subsection{\@dottedtocline{1}{4em}{1.0em}}
 
 \newcommand{\maketitlepage}{%
     \pagenumbering{gobble}

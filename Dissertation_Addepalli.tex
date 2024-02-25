@@ -1,5 +1,19 @@
 \documentclass{brandeis-dissertation3.14}
 
+\usepackage{hyperref}
+\usepackage{cleveref}
+\usepackage{biblatex}
+\usepackage{graphicx}
+\usepackage{subfig}
+\usepackage{Dissertation_Addepalli-defs}
+
+\renewcommand\thechapter{\Roman{chapter}}
+\renewcommand\thesection{\arabic{section}}
+\renewcommand{\numberline}[1]{Chapter #1 }
+%\renewcommand\thesubsection{(\alph{subsection})}
+
+\addbibresource{Dissertation_Addepalli.bib}
+
 \title{Search for Long Lived Heavy Neutral Leptons in Events with Displaced Vertices in ATLAS }
 \author{Sagar Vidya Addepalli}
 \graduationmonth{May}
@@ -11,9 +25,6 @@
 Prof. Aram Apyan, Department of Physics, Brandeis University\\
 Dr. Maximilian Emanuel Goblirsch-Kolb, European Organization for Nuclear Research}
 
-\usepackage{biblatex}
-\addbibresource{Dissertation_Addepalli.bib}
-\usepackage{Dissertation_Addepalli-defs}
 
 \begin{document}
 
@@ -21,12 +32,12 @@ Dr. Maximilian Emanuel Goblirsch-Kolb, European Organization for Nuclear Researc
 \makeapproval
 \frontmatter
 
-\addcontentsline{toc}{chapter}{Acknowledgements}
+\addcontentsline{toc}{section}{Acknowledgements}
 \begin{dissertation-acknowledgements}
-Thank you to John Burt for assisting with creating this package.
+I want to thank me, for believing in me and working hard.
 \end{dissertation-acknowledgements}
 
-\addcontentsline{toc}{chapter}{Abstract}
+\addcontentsline{toc}{section}{Abstract}
 \begin{dissertation-abstract}
 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
 \end{dissertation-abstract}
@@ -37,14 +48,18 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
 
 \clearpage
 
-\addcontentsline{toc}{chapter}{List of Tables}
+\addcontentsline{toc}{section}{List of Tables}
 \listoftables
 \pagebreak
-\addcontentsline{toc}{chapter}{List of Figures}
+\addcontentsline{toc}{section}{List of Figures}
 \listoffigures
 \pagebreak
-\chapter{List of Abbreviations}
+\setcounter{secnumdepth}{0}
+\chapter*{List of Abbreviations}
+\addcontentsline{toc}{section}{List of Abbreviations}
 \input{list-of-abbs}
+\setcounter{secnumdepth}{2}
+
 \startbody
 
 \chapter{Introduction}
@@ -55,6 +70,10 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
 \label{chap:theory}
 \input{chapters/theory}
 
+\chapter{Experimental Apparatus}
+\label{chap:experiment}
+\input{chapters/experiment}
+
 \chapter{Results}
 \label{chap:results}
 \input{chapters/results}
@@ -63,8 +82,6 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
 \label{chap:conclusion}
 \input{chapters/conclusion}
 
-%\bibliographystyle{plain}
-%\bibliography{references}
 \printbibliography
 
 \end{document}
