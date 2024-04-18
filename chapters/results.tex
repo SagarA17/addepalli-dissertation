@@ -1,6 +1,59 @@
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+This chapter presents the results of this analysis.~\Cref{sec:event_excess} presents a detailed analysis of the three excess events seen in the signal regions of the channels \euu and \eeu. The outcome of the search of HNLs is presented in~\cref{sec:limits} in the form of excluded phase space and comparisons to a previous search.
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+\section{Analysis of Outlying Events}\label{sec:event_excess}
+As shown in~\cref{fig:pre_fit_SR}, all but three events are found to be compatible statistical and systematic coverage with the MC prediction. Two of these three events are found in the \euu SR while the third is found in the \eeu SR.~\Cref{tab:excess_events_kinem} tabulates the important features and kinematics of the these events.
+\begin{table}[!htbp]
+    \centering
+    \begin{tabular}{cccc}
+    \hline\hline
+        Excess Event & 1 & 2 & 3\\
+        \hline
+        Channel & \euu & \euu & \eeu \\
+        \mhnl [GeV] & 19.1 & 15.8 & 9.6 \\
+        \mdv [GeV] & 2.70 & 1.9 & 2.8 \\
+        $\mathcal{S}$ & 247.8 & 128.5 & 124.4 \\
+        Prompt lep. \pT [GeV] & 28.5 & 44.8 & 45.4 \\
+        $\Delta \eta_{\ell\ell}$ & 0.11 & 0.10 & 0.09 \\
+        $\Delta \phi_{\ell\ell}$ [rad] & 0.22 & 0.19 & 0.16 \\
+        $\Delta R_{\ell\ell}$ & 0.24 & 0.22 & 0.19 \\
+        Cosmic Separation & 5.6 & 4.2 & 3.7 \\
+        $\theta_{r_\mathrm{DV}p_\mathrm{DV}}$ [rad] & 0.06 & 0.13 & 0.08 \\
+        \hline
+        Data Taking Year & 2015 & 2018 & 2018 \\
+        Run Number & 283429 & 356250 & 350184 \\
+        Event Number & 1139948317 & 1118382313 & 2746409499 \\
+    \hline\hline
+    \end{tabular}
+    \caption{Relevant kinematics and features of the three excess events found in the analysis signal regions.}
+    \label{tab:excess_events_kinem}
+\end{table}
 
-\subsection{Section of body}
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+The \mdv values of the events lie within 1-3 GeV, typically dominated by the HF background. The opening angle of the DV ($\Delta R_{\ell\ell}$) and its azimuthal and polar projections are relatively small, indicating that the DVs are most likely from genuine decays rather than random crossings. A very large value of the cosmic separation variable also rules out the possibility that these events are from cosmic muons. Lastly, the angle between the position of the DV and its momentum ($\theta_{r_\mathrm{DV}p_\mathrm{DV}}$) is also very small, alluding to the fact that there are no losses in the visible DV momentum in the form of neutrinos. The above facts strongly indicate that these events are not predicted by the background estimate due to an underpopulated or a missing Monte Carlo sample, perhaps QCD, which leads to the same final state and contaminates the measured phase space. An HNL signal would show signatures in multiple channels in similar mass windows, and hence would give a statistically significant outcome. 
+
+The excess is hence studied in a statistical framework of discovery testing to understand the significance of the excess given the signal models considered. The p-values are calculated for the four signal models and for the $\ctau=$10 mm and 100 mm points. One thousand pseudo-experiments are performed for for the signal and signal-plus-background hypotheses. The p-values are converted to discovery significances, and the results are shown in~\cref{fig:disco_signi}. The test-statistic used for this study is the \textit{upcapped} variant of $q_{\mu}$:
+\begin{equation}
+    q_\mu^{uncap} = 
+    \begin{cases} 
+    -2\ln\frac{\mathcal{L}(\mu=0, \hat{\hat{\theta}}_{\mu=0})}{\mathcal{L}(\hat{\mu}, \hat{\theta}_\mu)} & \text { for } \hat{\mu} \geq 0 \\ 
+    +2 \ln \frac{\mathcal{L}(\mu=0, \hat{\hat{\theta}}_{\mu=0})}{\mathcal{L}(\hat{\mu}, \hat{\theta}_\mu)} & \text { for } \hat{\mu}<0
+    \end{cases}
+    ,
+\end{equation}
+which takes positive values for $\hat{\mu}>0$ and negative values for $\hat{\mu}<0$. The signal significance $Z$ can hence be computed as:
+\begin{equation}
+    Z = 
+    \begin{cases} 
+    +\sqrt{+q} & \text { for } \hat{\mu} \geq 0 \\ 
+    -\sqrt{-q} & \text { for } \hat{\mu} < 0
+    \end{cases}.
+\end{equation}
+Hence, such a statistic allows for negative signal significances as well, arising from negative post-fit signal yields.
+
+{\color{red}(figure goes here)}
+
+There are three main features of the observed data events and the predicted yields in the signal region which affect and explain the observed such a discovery significance:
+\begin{enumerate}
+    \item 
+\end{enumerate}
+
+\section{Exclusion Limits}\label{sec:limits}

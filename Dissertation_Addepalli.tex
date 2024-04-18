@@ -1,15 +1,23 @@
 \documentclass{brandeis-dissertation3.14}
 
+\usepackage{amsmath}
+\usepackage{amssymb}
 \usepackage{hyperref}
 \usepackage{cleveref}
-\usepackage{biblatex}
+\usepackage[sorting=none]{biblatex}
 \usepackage{graphicx}
 \usepackage{subfig}
+\usepackage{color}
+\usepackage{xspace}
+\usepackage{tabularx}\usepackage{calc}\usepackage{array}
+\usepackage{lscape}
+\usepackage{multirow}
+\usepackage{verbatim}
 \usepackage{Dissertation_Addepalli-defs}
 
 \renewcommand\thechapter{\Roman{chapter}}
 \renewcommand\thesection{\arabic{section}}
-\renewcommand{\numberline}[1]{Chapter #1 }
+%\renewcommand{\numberline}[1]{Chapter #1 }
 %\renewcommand\thesubsection{(\alph{subsection})}
 
 \addbibresource{Dissertation_Addepalli.bib}
@@ -32,15 +40,15 @@ Dr. Maximilian Emanuel Goblirsch-Kolb, European Organization for Nuclear Researc
 \makeapproval
 \frontmatter
 
-\addcontentsline{toc}{section}{Acknowledgements}
 \begin{dissertation-acknowledgements}
 I want to thank me, for believing in me and working hard.
 \end{dissertation-acknowledgements}
+\addcontentsline{toc}{section}{Acknowledgements}
 
-\addcontentsline{toc}{section}{Abstract}
 \begin{dissertation-abstract}
 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
 \end{dissertation-abstract}
+\addcontentsline{toc}{section}{Abstract}
 
 \doublespacing
 
@@ -48,11 +56,11 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
 
 \clearpage
 
-\addcontentsline{toc}{section}{List of Tables}
 \listoftables
+\addcontentsline{toc}{section}{List of Tables}
 \pagebreak
-\addcontentsline{toc}{section}{List of Figures}
 \listoffigures
+\addcontentsline{toc}{section}{List of Figures}
 \pagebreak
 \setcounter{secnumdepth}{0}
 \chapter*{List of Abbreviations}
@@ -73,6 +81,14 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
 \chapter{Experimental Apparatus}
 \label{chap:experiment}
 \input{chapters/experiment}
+
+\chapter{Analysis Overview}
+\label{chap:ana_overview}
+\input{chapters/analysis_overview}
+
+\chapter{Analysis Strategy}
+\label{chap:ana_strategy}
+\input{chapters/analysis_strategy}
 
 \chapter{Results}
 \label{chap:results}
