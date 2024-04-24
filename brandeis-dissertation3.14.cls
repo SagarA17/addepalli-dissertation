@@ -32,10 +32,10 @@
 \RequirePackage{csquotes}
 \RequirePackage{tocloft}
 \AtBeginEnvironment{quote}{\singlespacing}
-\renewcommand\cfttoctitlefont{\normalsize}
-\renewcommand\cftlottitlefont{\normalsize}
-\renewcommand\cftloftitlefont{\normalsize}
-\titleformat{\chapter}{\normalsize\centering\uppercase}{}{0ex}{}
+\renewcommand\cfttoctitlefont{\normalsize\bfseries}
+\renewcommand\cftlottitlefont{\normalsize\bfseries}
+\renewcommand\cftloftitlefont{\normalsize\bfseries}
+\titleformat{\chapter}[display]{\normalsize\centering\bfseries}{\chaptertitlename~\thechapter}{0ex}{\MakeUppercase}
 \titleformat*{\section}{\normalsize\bfseries}
 \titleformat*{\subsection}{\normalsize\bfseries}
 \titleformat*{\subsubsection}{\normalsize}
@@ -43,16 +43,13 @@
 \titlespacing*{\section}{0 pt}{-\baselineskip}{0 pt}
 \titlespacing*{\subsection}{0 pt}{\baselineskip}{0 pt}
 \titlespacing*{\subsubsection}{0 pt}{-\baselineskip}{0 pt}
-\newcommand{\sectionbreak}{\clearpage}
+\newcommand{\sectionbreak}{\vspace{0.7in}}
 \newcommand\graduationmonth[1]{\def\@graduationmonth{#1}}
 \newcommand\graduationyear[1]{\def\@graduationyear{#1}}
 \newcommand\program[1]{\def\@program{#1}}
 \newcommand\advisor[1]{\def\@advisor{#1}}
 \newcommand\signoff[2]{\def\@signoff{#1}\def\@signofftitle{#2}}
 \newcommand\committee[1]{\def\@committee{#1}}
-\renewcommand\cfttoctitlefont{\normalsize}
-\renewcommand\cftlottitlefont{\normalsize}
-\renewcommand\cftloftitlefont{\normalsize}
 \addto\captionsenglish{\renewcommand*\contentsname{\hfill TABLE OF CONTENTS}}
 \renewcommand{\cftaftertoctitle}{\hfill} 
 \renewcommand{\cftbeforetoctitleskip}{-24pt}
@@ -65,12 +62,6 @@
 \renewcommand{\cftafterloftitle}{\hfill}
 \addto\captionsenglish{\renewcommand*\listtablename{\hfill LIST OF TABLES}}
 \renewcommand{\cftafterlottitle}{\hfill}
-% \setlength{\topmargin}{1in}
-
-\setcounter{secnumdepth}{-1}
-%\renewcommand*\l@section{\@dottedtocline{1}{2em}{1.0em}}
-%\renewcommand*\l@chapter{\@dottedtocline{1}{0em}{1.0em}}
-%\renewcommand*\l@subsection{\@dottedtocline{1}{4em}{1.0em}}
 
 \newcommand{\maketitlepage}{%
     \pagenumbering{gobble}
@@ -129,20 +120,20 @@
     \newpage
     \setcounter{page}{3}
 }
-% \newcommand{\makecopyright}{%
-%     \pagenumbering{gobble}
-%     \begin{center}
-%     \vspace*{\fill}
-%         Copyright by\\
-%         \@author{}\\
-%         \vspace{1em}
-%         \@graduationyear{}
-%     \end{center}
-%     \restoregeometry
-%     \newpage
-%     \pagenumbering{roman}
-%     \setcounter{page}{4}
-% }
+\newcommand{\makecopyright}{%
+    \pagenumbering{gobble}
+    \begin{center}
+    \vspace*{\fill}
+        Copyright by\\
+        \@author{}\\
+        \vspace{1em}
+        \@graduationyear{}
+    \end{center}
+    \restoregeometry
+    \newpage
+    \pagenumbering{roman}
+    \setcounter{page}{4}
+}
 \newenvironment{dissertation-acknowledgements}
     {
     % \newgeometry{top=1.0in}

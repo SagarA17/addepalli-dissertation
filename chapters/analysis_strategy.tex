@@ -1,4 +1,4 @@
-The goal of this analysis is to search for long-lived Heavy Neutral Leptons in the 1-20 GeV mass range. While the displaced vertex driven search provides a clean signature to work with, there are various sources of backgrounds that contaminate the targeted phase space.~\Cref{sec:backgrounds} describes these backgrounds and the kinematic cuts that remove or reduce them.~\Cref{sec:corr_bkg} details the study of the background consisting of DVs with correlated tracks and its method of estimation, which is followed by~\cref{sec:uncorr_bkg} which outlines the same for DVs with uncorrelated tracks. After all the background estimation methods are in place, the signal strength is extracted using a simultaneous fit across all analysis regions as described in~\cref{sec:sig_ext}.
+The goal of this analysis is to search for long-lived Heavy Neutral Leptons in the 1-20 GeV mass range. While the displaced vertex driven search provides a clean signature to work with, there are various sources of backgrounds that contaminate the targeted phase space.~\Cref{sec:backgrounds} describes these backgrounds and the kinematic cuts that remove or reduce them.~\Cref{sec:corr_bkg} details the study of the background consisting of DVs with correlated tracks and its method of estimation.~\Cref{sec:uncorr_bkg} outlines the same for DVs with uncorrelated tracks. After all the background estimation methods are in place, the signal strength is extracted using a simultaneous fit across all analysis regions as described in~\cref{sec:sig_ext}.
 
 \section{Backgrounds}\label{sec:backgrounds}
 The backgrounds considered in this analysis are categorized into reducible and irreducible. While dedicated cuts are used to completely remove reducible backgrounds with negligible impact to the signal, cuts applied to suppress irreducible backgrounds also affect the signal, with the exact cut value optimized to maximize signal significance.
@@ -8,24 +8,24 @@ The backgrounds considered in this analysis are categorized into reducible and i
     \centering
      \subfloat[$\gamma\to ee$ conversions]{\includegraphics[width=0.3\textwidth]{figures/analysis_strategy/bkg_illustrations/photon_conv.png}}
      \subfloat[Cosmic muons]{\includegraphics[width=0.3\textwidth]{figures/analysis_strategy/bkg_illustrations/cosmics.png}}
-     \subfloat[$Z\to\ell\ell$ decays]{\includegraphics[width=0.3\textwidth]{figures/analysis_strategy/bkg_illustrations/zdecays.png}}
+     \subfloat[$Z\to\ell\ell$ decays]{\includegraphics[width=0.3\textwidth]{figures/analysis_strategy/bkg_illustrations/zdecays_1.png}}
      \caption{Illustrative topology of the reducible backgrounds in the ATLAS ID volume.}
      \label{fig:bkg_reducible}
 \end{figure}
 
 Three sources of reducible backgrounds affect this analysis, as illustrated in~\cref{fig:bkg_reducible}:
 \begin{enumerate}
-    \item $\gamma\to ee$ conversions: Photons interacting with the various layers of material in the ID volume recoil against the atoms and produce a $e^+e^-$ pair. Such a $ee$ DV, along with a prompt lepton source, contaminates the measurement phase space. To remove this background, $ee$ DVs are required to be inside a narrower fiducial volume ($|z|<300$~mm) and must satisfy a \textit{material map} veto, which rejects DVs which have a reconstructed position consistent with the position of the detector material. The material map, as shown in~\cref{fig:material_map}, is constructed using the known positions of detector elements and from the position of low-mass vertices reconstructed in data~\cite{SUSY-2018-13}. The material map veto removes 48\% of the fiducial volume. The two electrons from a photon conversion are highly collinear since the recoiling nucleus takes very little momentum away from the photon. Hence, the \mdv distribution\footnote{$\mdv\approx\sqrt{E_1\cdot E_2 (1-\cos\alpha)+2m_1m_2}$ for relativistic objects with energies and masses $E_1,\,E_2$ and $m_1,\,m_2$, respectively.} starts at $\sqrt{2}m_e$ and falls sharply. Since the \mdv calculation makes a pion mass assumption on the outgoing tracks, the lower mass bound is given by $\sqrt{2}m_{\pi^+}\approx280$~MeV. Hence, to further reject any remaining conversions, a $\mdv>500$~MeV cut is applied on $ee$ DVs.
+    \item $\gamma\to ee$ conversions: Photons interacting with the various layers of material in the ID volume recoil against the atoms and produce a $e^+e^-$ pair. Such a $ee$ DV, along with a prompt lepton source, contaminates the measurement phase space. To remove this background, $ee$ DVs are required to be inside a narrower fiducial volume ($|z|<300$~mm) and must satisfy a \textit{material} veto, which rejects DVs which have a reconstructed position consistent with the position of the detector material. The material map, as shown in~\cref{fig:material_map}, is constructed using the known positions of detector elements and from the position of low-mass vertices reconstructed in data~\cite{SUSY-2018-13}. The material veto removes 48\% of the fiducial volume. The two electrons from a photon conversion are highly collinear since the recoiling nucleus takes very little momentum away from the photon. Hence, the \mdv distribution\footnote{$\mdv\approx\sqrt{E_1\cdot E_2 (1-\cos\alpha)+2m_1m_2}$ for relativistic objects with energies and masses $E_1,\,E_2$ and $m_1,\,m_2$, respectively.} starts at $\sqrt{2}m_e$ and falls sharply. Since the \mdv calculation makes a pion mass assumption on the outgoing tracks, the lower mass bound is given by $\sqrt{2}m_{\pi^+}\approx280$~MeV. Hence, to further reject any remaining conversions, a $\mdv>500$~MeV cut is applied on $ee$ DVs. This assumption does not affect the impact of the cut since an \mdv measurement of the scale $\sqrt{2}m_e$ cannot be resolved by ATLAS.
 
     \begin{figure}[!ht]
         \centering
-        \subfloat[Positions in $x-y$ plane]{\includegraphics[width=0.45\textwidth]{figures/analysis_strategy/mat_map_xy.pdf}}
-        \subfloat[Positions in $r-z$ plane]{\includegraphics[width=0.45\textwidth]{figures/analysis_strategy/mat_map_rz.pdf}}
+        \subfloat[Positions in $x-y$ plane]{\includegraphics[width=0.5\textwidth]{figures/analysis_strategy/mat_map_xy.pdf}}
+        \subfloat[Positions in $r-z$ plane]{\includegraphics[width=0.5\textwidth]{figures/analysis_strategy/mat_map_rz.pdf}}
         \caption{The positions of reconstructed displaced vertices that are vetoed by the material map.~\cite{SUSY-2018-13}}
         \label{fig:material_map}
     \end{figure}
 
-    \item Cosmic muons: Even though ATLAS is 100 m inside the ground, the shaft right above it devoid of any earth material allows a large flux of muons from the comsic microwave background to enter the detector. One such cosmic muon passing through the ATLAS ID can be incorrectly reconstructed as two tracks, with them together reconstructed as the two legs of one secondary vertex. Such a DV is characterized by \textit{back-to-back} tracks i.e. $\eta_\mathrm{track1}\approx-\eta_\mathrm{track2}$ and $\phi_\mathrm{track1}-\phi_\mathrm{track2}\approx\pi$. Hence, a cut on the cosmic separation variable, $\sqrt{(\Sigma_\text{DV tracks}\eta)^2+(\pi-|\Delta_\text{DV tracks}\phi|)^2}>.05$, is applied to reject this background. The exact cut value was optimized for the 2022 analysis, and was found to be sufficient for rejecting all background without affecting signal.
+    \item Cosmic muons: Even though ATLAS is 100 m below the ground, the open shaft above it allows a large flux of muons from the the interaction of cosmic rays with the atmosphere to enter the detector. One such cosmic muon passing through the ATLAS ID can be incorrectly reconstructed as two tracks, with them together reconstructed as the two legs of one secondary vertex. Such a DV is characterized by \textit{back-to-back} tracks i.e. $\eta_\mathrm{track1}\approx-\eta_\mathrm{track2}$ and $\phi_\mathrm{track1}-\phi_\mathrm{track2}\approx\pi$. Hence, a cut on the cosmic separation variable, $\sqrt{(\Sigma_\text{DV tracks}\eta)^2+(\pi-|\Delta_\text{DV tracks}\phi|)^2}>.05$, is applied to reject this background. The exact cut value was optimized for the 2022 analysis, and was found to be sufficient for rejecting all background without affecting signal.
 
     \item $Z\to\ell\ell$ decays: One of the leptons from a $Z$ decay can be paired with a third uncorrelated lepton to give a lepton+DV topology probed in this analysis. To reject this background, a veto on the $m_{\ell\ell}$ variable around the $Z$ mass, $|m_{\ell\ell}-90\text{ GeV}|>10\text{ GeV}$ is applied to same-flavor opposite-sign (SFOS) pairs of leptons, where one is a prompt lepton and the other is a DV lepton.
 \end{enumerate}
@@ -38,7 +38,7 @@ Three sources of reducible backgrounds affect this analysis, as illustrated in~\
         \hline\hline
          Cut Name & Cut Description\\
          \hline
-         Photon Conversions Veto & Material map veto applied to $ee$ DVs\\
+         Photon Conversions Veto & Material veto applied to $ee$ DVs\\
          Low Mass DV Veto & $\mdv>500$~MeV for $ee$ DVs\\
          Cosmic Muon Veto & $\sqrt{(\Sigma_\text{DV tracks}\eta)^2+(\pi-|\Delta_\text{DV tracks}\phi|)^2}>.05$\\
          $Z\to\ell\ell$ Veto & $|m_{\ell_\mathrm{DV}\ell_\mathrm{prompt}}-90\text{ GeV}|>10\text{ GeV}$ for SFOS pairs \\
@@ -60,44 +60,46 @@ Three sources of reducible backgrounds affect this analysis, as illustrated in~\
 
 Two sources of irreducible backgrounds affect this analysis, as illustrated in~\cref{fig:bkg_irreducible}:
 \begin{enumerate}
-    \item Correlated background: The largest background that affects this analysis is the lepton+DV signature coming from correlated decay sources. Heavy hadrons, such as b-hadrons and $J/\psi$, mimic signatures from BSM LLPs and decay macroscopically in the ID volume. While these decays are often multi-legged, two of its legs can be captured by VSI and hence contaminate the phase space targeted in this analysis.~\Cref{sec:corr_bkg} describes the detailed study of this background and the method of its estimation.
+    \item Correlated background: The largest background that affects this analysis is the lepton+DV signature coming from correlated decay sources. Heavy hadrons, such as b-hadrons and secondary $J/\psi$, mimic signatures from BSM LLPs and decay macroscopically in the ID volume. While these decays are often multi-legged, two of its legs can be captured by VSI and hence contaminate the phase space targeted in this analysis.~\Cref{sec:corr_bkg} describes the detailed study of this background and the method of its estimation.
 
-    \item Uncorrelated background: A non-negligible background contribution comes in the form of uncorrelated track pairs, or \textit{random crossings} (RC), that happen to cross in an event and then captured by VSI. The DV is not a genuine decay but rather an accidental point of crossing.~\Cref{sec:uncorr_bkg} talks about the method used in the analysis to estimate the contribution from random crossing background.
+    \item Uncorrelated background: A (non-)negligible background contribution comes in the form of uncorrelated track pairs, or \textit{random crossings} (RC), that happen to cross in an event and then captured by VSI. The DV is not a genuine decay but rather an accidental point of crossing.~\Cref{sec:uncorr_bkg} describes the method used in the analysis to estimate the contribution from random crossing background.
 \end{enumerate}
 
 \section{Correlated Background}\label{sec:corr_bkg}
-Like previously stated, the biggest background contaminating this analysis is the background from the production of heavy flavor (HF) hadrons which decay to leptons that are displaced with respect to the primary vertex of the collisions and are predominantly found in the \mdv$<5$~GeV phase space. Such a phase space was completely removed from consideration in the 2022 analysis since there was no way to estimate them which significantly reduced sensitivity to low mass HNLs. In this analysis, MC simulations of SM processes (specifically of the $t\bar{t}$ and $V+$jets processes) are used to understand and estimate this background. A signal rich phase space, called the Signal Region (SR), is defined to look for HNLs in a wide lifetime-coupling parameter space, while a non-overlapping,  or \textit{orthogonal}, phase space rich in correlated background, called the Heavy Flavor Control Region (HF-CR), is defined to estimate the contribution of this background in a data-driven manner.
+As previously stated, the biggest background in this analysis is the background from the production of heavy flavor (HF) hadrons which decay to leptons that are displaced with respect to the primary vertex. These are predominantly found in the \mdv$<5$~GeV phase space. Such a phase space was completely removed from consideration in the 2022 analysis due to the lack of a robust method to estimate them which significantly reduced sensitivity to low mass HNLs. In this analysis, MC simulations of SM processes (specifically of the $t\bar{t}$ and $V+$jets processes) are used to understand and estimate this background. A signal rich phase space, called the Signal Region (SR), is defined to look for HNLs in a wide lifetime-coupling parameter space. A non-overlapping phase space rich in correlated background, called the Heavy Flavor Control Region (HF-CR), is defined to estimate the contribution of this background in a data-driven manner.
 
 \subsection{Analysis regions}
 
 All events considered in this analysis are required to have at least one primary vertex with two tracks with \pT$>500$~MeV. The hard-scatter vertex is selected among all reconstructed primary vertices as the one with the largest $\Sigma\pT^2$, where the sum is over all the tracks attached to the PV.
 
-A pre-selection cut is inherited from the 2022 analysis for the selection of signatures from a $W$-decay. The tri-lepton invariant mass $m_{\ell\ell\ell}$ is used as a proxy for the $W$ mass module the missing neutrino present in the HNL decay. Events are required to have 40 GeV$<m_{\ell\ell\ell}<$90 GeV. A $J/\psi$-veto is applied for $ee$ and $\mu\mu$ DVs requiring $|\mdv-3.1\text{ GeV}|>0.1\text{ GeV}$.
+A pre-selection cut is applied for the selection of signatures from a $W$-decay. The tri-lepton invariant mass ($m_{\ell\ell\ell}$) is used as a proxy for the $W$ mass. Events are required to have 40 GeV$<m_{\ell\ell\ell}<$90 GeV, where the lower cut is more liberal compared to the upper cut to account for energy losses from a neutrino emission. A $J/\psi$-veto is applied for $ee$ and $\mu\mu$ DVs requiring $|\mdv-3.1\text{ GeV}|>0.1\text{ GeV}$.
 
 The final pre-selection cut is applied using a discriminating variable optimized to significantly suppress the contribution from hadron decays. The variable $\mathcal{S}$ is defined as
 \begin{equation}
-    \mathcal{S}^{2} = \frac{\boldsymbol{\Delta}_{\text{3D}}\text{(PV,DV)}}{\text{Cov}(\Delta_{\text{3D}(\text{PV,DV})})},
+    \mathcal{S}^{2} = {\boldsymbol{\Delta}_{\text{3D}}\text{(PV,DV)}}^T \cdot  {\text{\textbf{Cov}}(\Delta_{\text{3D}(\text{PV,DV})})^{-1}} \cdot {\boldsymbol{\Delta}_{\text{3D}}\text{(PV,DV)}},
 \end{equation}
-where $\Delta_{\text{3D}}\text{(PV,DV)}$ is the 3D vector of the distance between the primary- and secondary-vertex position, and $\text{Cov}(\Delta_{\text{3D}(\text{PV,DV})})$ is the covariance matrix of the difference between the primary- and secondary-vertex position. Effectively, this is implemented as follows, defining $\mathcal{W} = \text{Cov}(\Delta_{\text{3D}}(\text{PV,DV}))^{-1}$,
-\begin{equation}
-     \mathcal{S}^{2} = \Delta X^{2} \cdot \mathcal{W}_{00} + \Delta Y^{2} \cdot \mathcal{W}_{11} + \Delta Z^{2} \cdot \mathcal{W}_{22} + 2\Delta X \Delta Y \cdot\mathcal{W}_{01} + 2\Delta X \Delta Z \cdot\mathcal{W}_{02} + 2\Delta Y \Delta Z \cdot\mathcal{W}_{12},
- \end{equation}
-where $\Delta X = \text{PV}_{x} - \text{DV}_{x}$, $\Delta Y$ and $\Delta Z$ are defined in the same way. Roughly speaking, DVs with lower values of $\mathcal{S}$ have larger \rdv and $\pT^\text{DV tracks}$ and lower $\Delta R$ between the DV tracks.
+where $\boldsymbol{\Delta}_{\text{3D}}\text{(PV,DV)}$ is the 3D vector of the distance between the primary- and secondary-vertex position, and $\text{\textbf{Cov}}(\Delta_{\text{3D}(\text{PV,DV})})$ is the covariance matrix of the difference between the primary- and secondary-vertex position. $\mathcal{S}$ can be interpreted as a significance of the the PV-DV distance. 
+%Effectively, this is implemented as follows, defining $\mathcal{W} = \text{Cov}(\Delta_{\text{3D}}(\text{PV,DV}))^{-1}$,
+%\begin{equation}
+%     \mathcal{S}^{2} = \Delta X^{2} \cdot \mathcal{W}_{00} + \Delta Y^{2} \cdot \mathcal{W}_{11} + \Delta Z^{2} \cdot \mathcal{W}_{22} + 2\Delta X \Delta Y \cdot\mathcal{W}_{01} + 2\Delta X \Delta Z \cdot\mathcal{W}_{02} + 2\Delta Y \Delta Z \cdot\mathcal{W}_{12},
+% \end{equation}
+%where $\Delta X = \text{PV}_{x} - \text{DV}_{x}$, $\Delta Y$ and $\Delta Z$ are defined in the same way. 
+Roughly speaking, DVs with lower values of $\mathcal{S}$ have larger $\pT^\text{DV tracks}$ and lower \rdv and $\Delta R$ between the DV tracks.
  
 \begin{figure}[!ht]
     \centering
     \subfloat[Hadron decay background]{\includegraphics[width=0.45\textwidth]{figures/analysis_strategy/S2D_bkg.pdf}}\\
     \subfloat[\mhnl=2 GeV, \ctau=1000 mm HNL signal]{\includegraphics[width=0.45\textwidth]{figures/analysis_strategy/S2D_HNL2_ctau1000.pdf}}
     \subfloat[\mhnl=7.5 GeV, \ctau=100 mm HNL signal]{\includegraphics[width=0.45\textwidth]{figures/analysis_strategy/S2D_HNL7p5_ctau100.pdf}}
-    \caption{Two-dimensional distribution of the $\mathcal{S}$ variable, referred to as `DV significance' in the plots, as a function of \mdv.}
+    \caption{Distribution of events as a function of the $\mathcal{S}$ variable, referred to as `DV significance' in the plots and \mdv.}
     \label{fig:dvsigni_MDV}
 \end{figure}
 
-The 2D distribution of $\mathcal{S}$ versus the mass of the displaced vertex, $m_{\text{DV}}$ is shown in \cref{fig:dvsigni_MDV} for the hadron decay background predicted by the combination of $t\bar{t}$ and $V+$jets MC simulations as well as for representative signals in for pairs (\mhnl, \ctau) = (2 GeV, 1000 mm) and (7.5 GeV, 100 mm).
+The distribution of events as a function of $\mathcal{S}$ and the mass of the displaced vertex, $m_{\text{DV}}$ is shown in \cref{fig:dvsigni_MDV} for the hadron decay background predicted by the combination of $t\bar{t}$ and $V+$jets MC simulations as well as for representative signals in for pairs (\mhnl, \ctau) = (2 GeV, 1000 mm) and (7.5 GeV, 100 mm).
 
-From~\cref{fig:dvsigni_MDV}, it is clear that the hadron decay backgrounds are characterised by lower values of $\mathcal{S}$, while for the signal samples the discriminant variable peaks at values above 100. Furthermore, SM backgrounds are present only for displaced vertices masses below 5 GeV, as they are mostly produced in $B$-hadron decay chains. For this reasons, it was decided to apply the following selection to all the events in the analysis: $\mathcal{S}>100$ \textit{if} \mdv$<5$~GeV. This means that all the events outside of the rectangle defined by the four coordinates (0,0), (5,0), (0,100), (5,100) in the $(\mdv\,[\text{GeV}],\mathcal{S})$ plane are retained.
+From~\cref{fig:dvsigni_MDV}, it is clear that the hadron decay backgrounds are characterised by lower values of $\mathcal{S}$, while for the signal samples the discriminant variable peaks at values above 100. Furthermore, the events from the SM processes are present only for displaced vertices masses below 5 GeV, as they are mostly produced in $B$-hadron decay chains. For this reasons, I decided to apply the following selection to all the events in the analysis: $\mathcal{S}>100$ \textit{if} \mdv$<5$~GeV. This means that all the events outside of the rectangle defined by the four coordinates (0,0), (5,0), (0,100), (5,100) in the $(\mdv\,[\text{GeV}],\mathcal{S})$ plane are retained.
 
-The SR is defined by requiring, on top of the events pre-selection, that the two displaced leptons satisfy a loose isolation, using the \texttt{Loose\_VarRad}~\cite{EGAM-2018-01} WP for electrons, and the \texttt{PflowLoose\_VarRad} WP~\cite{MUON-2018-03} for muons. Leptons from the DV tend to be collimated and hence close-by-effects that might appear in the evaluation of isolation variables are taken into account and correctly subtracted from both the track-term and the calorimeter-term that define the isolation working points. This procedure is done since Run-1 in $H\to ZZ^*\to 4\ell$ analyses, and generally applies to boosted multi-lepton signatures utilizing lepton isolation. The HF-CR, on the other hand, is defined adding a requirement of at least one non-isolated displaced lepton. To further suppress signal contamination in this region, at least one b-tagged jet is required. This requirement does not bias the kinematics of the correlated background in the HF-CR away from the SR. Lastly, since this analysis probes HNLs with masses up to 20 GeV, the phase space beyond \mhnl$>20$~GeV is not looked into in the SR. ~\Cref{tab:sr_cr_cuts} summarizes the cuts used for the SR and the HF-CR. There are 6 SRs and 6 HF-CRs defined in this analysis, one each per channel.
+The SR is defined by requiring, on top of the events pre-selection, that the two displaced leptons satisfy an isolation criterion, using the \texttt{Loose\_VarRad}~\cite{EGAM-2018-01} WP for electrons, and the \texttt{PflowLoose\_VarRad} WP~\cite{MUON-2018-03} for muons. Leptons from the DV tend to be collimated and hence close-by-effects\footnote{The calculation of isolation variables uses low-level information from the tracker and the calorimeter without relying on object-level reconstruction. When two leptons are close to each other, they will contribute to the calculation of each other's isolation variables. However, since isolation is only supposed to identify leptons in jets, such a lepton-close-by-effect is an artefact of the method and needs to be corrected.} that might appear in the evaluation of isolation variables are taken into account and correctly subtracted from both the track term and the calorimeter term that define the isolation working points. This procedure is done since Run-1 in $H\to ZZ^*\to 4\ell$ analyses, and generally applies to boosted multi-lepton signatures utilizing lepton isolation. The HF-CR, on the other hand, is defined adding a requirement of at least one non-isolated displaced lepton. To further suppress signal contamination in this region, at least one b-tagged jet is required. This requirement does not bias the kinematics of the correlated background in the HF-CR away from the SR. Lastly, since this analysis probes HNLs with masses up to 20 GeV, the phase space beyond \mhnl$>20$~GeV is not considered in the SR. ~\Cref{tab:sr_cr_cuts} summarizes the cuts used for the SR and the HF-CR. There are 6 SRs and 6 HF-CRs defined in this analysis, one each per channel.
 
 \begin{table}[!ht]
     \centering
@@ -120,7 +122,7 @@ The SR is defined by requiring, on top of the events pre-selection, that the two
          \hline
          \multicolumn{3}{c}{\textbf{Pre-selection}} \\
          \hline
-         $\gamma\to e e$ Veto & \multicolumn{2}{c}{Material map veto, $|z|<300$~mm and $\mdv>500$~MeV for $ee$ DVs} \\
+         $\gamma\to e e$ Veto & \multicolumn{2}{c}{Material veto, $|z|<300$~mm and $\mdv>500$~MeV for $ee$ DVs} \\
          Cosmic Muon Veto & \multicolumn{2}{c}{$\sqrt{(\Sigma_\text{DV tracks}\eta)^2+(\pi-|\Delta_\text{DV tracks}\phi|)^2}>.05$}\\
          $Z\to\ell\ell$ Veto & \multicolumn{2}{c}{$|m_{\ell_\mathrm{DV}\ell_\mathrm{prompt}}-90\text{ GeV}|>10\text{ GeV}$ for SFOS pairs} \\
          $W$-decay Selection & \multicolumn{2}{c}{40 GeV $<m_{\ell\ell\ell}<90$ GeV} \\
@@ -229,7 +231,8 @@ The SR is defined by requiring, on top of the events pre-selection, that the two
 \end{figure}
 
 \subsection{Truth classification}
-As previously mentioned, the hadron decay background estimation is done in a data-driven way with their kinematics modeled using MC simulations of $t\bar{t}$ and $V+$jets processes. Other processes which could lead to the considered final state were studied, and the contribution from them was found to be negligible. Such simulations offer a way to study the physical source of the final state using the \textit{truth origin} of the tracks in the DV. The truth origin of a track, an integer value ranging from 0 to 45, demarcates the nature of the particle which decayed to give the DV track using the \texttt{MCTruthClassifier}~\cite{mc-truth-web} package\footnote{The available categories can be seen in the ATLAS reconstruction framework \url{https://gitlab.cern.ch/atlas/athena/-/blob/24.0/PhysicsAnalysis/MCTruthClassifier/MCTruthClassifier/MCTruthClassifierDefs.h}.}. 
+As previously mentioned, the kinematics of the hadron decay background are modeled using MC simulations of $t\bar{t}$ and $V+$jets processes and the normalization is obtained from data. Other processes, such as di-boson, multi-jet, $b\bar{b}$, which could lead to the considered final state were studied, and the contribution from them was found to be negligible. Such simulations offer a way to study the physical source of the final state using the \textit{truth origin}\footnote{The truth origin of a track, an integer value ranging from 0 to 45, demarcates the nature of the particle which decayed to give the DV track using the \texttt{MCTruthClassifier}~\cite{mc-truth-web} package. The available categories can be seen in the ATLAS reconstruction framework \url{https://gitlab.cern.ch/atlas/athena/-/blob/24.0/PhysicsAnalysis/MCTruthClassifier/MCTruthClassifier/MCTruthClassifierDefs.h}.}. 
+of the tracks in the DV. The truth origin is calculated by looking at the parent information of the truth-matched particle of an ID track. Based on the kind of the parent, the truth origin is dilineated into a set of categories.
 
 \begin{figure}[!ht]
     \centering
@@ -238,15 +241,15 @@ As previously mentioned, the hadron decay background estimation is done in a dat
     \label{fig:mctruth_groups}
 \end{figure}
 
-In ~\cref{fig:mctruth_groups}, an example plot is discussed in detail where the grouping of different kind of events are shown. The events passing the HF-CR selection of the \uuu channel are filled. This region has been chosen because it is a high-statistics region and it allows to clearly highlight the different contributions. The truth origin of one of the two tracks in the DV is plotted on the $x$-axis and the truth origin of the other one is plotted on the $y$-axis. As can be seen from the $z$-axis scale, the two main contribution of the total background are events with truth origins for (track 1, track 2) = (25,26) and (26, 25): these correspond to tracks associated to the decay productions of $B$- (26) and $D$-mesons (25). This is because $B$ mesons can decay into $D$ mesons plus a charged lepton. Subsequently, real leptons can also be produced in multiple steps of the $D$-meson decay-chain. Such cases are reconstructed as a single DV with two charged leptons, thus passing the selection of the analysis. The presence of additional tracks are less likely to be captured by the vertexing algorithm due to the reduced track acceptance in the attachment step where only seeded tracks are considered.
+In ~\cref{fig:mctruth_groups}, an example plot shows the grouping of different kind of DVs shown for the events passing the HF-CR selection of the \uuu channel. This region has been chosen because it is a high-statistics region and it allows to clearly highlight the different contributions. The truth origin of one of the two tracks in the DV is plotted on the $x$-axis and the truth origin of the other one is plotted on the $y$-axis. As can be seen from the $z$-axis scale, the two main contribution of the total background are events with truth origins for (track 1, track 2) = (25,26) and (26, 25): these correspond to tracks associated to the decay productions of $B$- (26) and $D$-mesons (25). This is because $B$ mesons can decay into $D$ mesons plus a charged lepton. Subsequently, real leptons can also be produced in multiple steps of the $D$-meson decay-chain. Such cases are reconstructed as a single DV with two charged leptons, thus passing the selection of the analysis. The presence of additional (low quality) tracks in the decay chain are less likely to be captured by the vertexing algorithm, since the track attachment step is modified to only use tracks that pass the track seeding requirements.
 
-Apart from the main source of HF background, some events are also found with one of the tracks having truth origin 23 or 24, corresponding to tracks originating from light hadrons or strange mesons, respectively. These can be found in the decay chains of $B$ and $D$ mesons as well. 
+Apart from the main source of HF background, some events are also found with one of the tracks having truth origin 23 or 24, corresponding to leptons originating from light hadrons or strange mesons, respectively. These can be found in the decay chains of $B$ and $D$ mesons as well. 
 
 Another non negligible component comes from pairs of track with true origin equal to 27: these are tracks associated to the production of $c\bar{c}$ mesons, i.e. $J/\psi$ contribution. This is suppressed by the $J/\psi$ veto introduced in this round of the analysis, however it still contributes and is localised in the $m_{DV}$ distribution around 3.1 GeV.
 
 Additional background is found to be associated to the production of heavy flavour baryons, both containing $b$- and $c$- quarks. This population of events leads to DVs in which the tracks are classified as coming from bottom meson + charm hadron or charm meson + bottom hadron. 
 
-The last population, significantly smaller than the ones above, consist of events in which at least one the tracks associated to the displaced vertex comes from an unknown (0) origin. This reflects the presence of real $B$- or $D$-meson production which undergo subsequent decays into leptons, with the other lepton comes from either jets in the events located close to the lepton, or, less likely, directly from the underlying event. This category of events is negligible with respect to the others.
+The last population, significantly smaller than the ones above, consist of events in which at least one the tracks associated to the displaced vertex comes from an unknown (0) origin. This reflects the presence of real $B$- or $D$-meson production which undergo subsequent decays into leptons, with the other lepton comes from either jets in the events located close to the lepton, or, less likely, directly from the underlying event or a pileup track. This category of events is negligible with respect to the others.
 
 A very minor contribution comes from two tracks with truth origin 9, corresponding to tracks associated to the decay of $\tau$ leptons. This component is also negligible and hence ignored in the rest of the analysis.
 
@@ -322,7 +325,7 @@ These regions (signal regions) are currently blinded.
 \end{comment}
 
 \subsection{Background prediction}
-To exploit the fact that the different background components have different DV mass distributions, the chosen variable  in the HF-CRs for the statistical analysis, described later in~\cref{sec:sig_ext}, is \mdv itself. On the other hand, since the HNL signal extraction is done from the SRs, the reconstructed HNL mass (\mhnl) introduced in the 2022 analysis is used for its strong discrimination power. The reconstruction uses energy-momentum conservation in the HNL production ($W\to\mathcal{N}\ell_1$) and decay ($\mathcal{N}\to\ell_1\ell_2\nu$) to get around the lack of measurement of the neutrino kinematics. The MC samples are used to build the templates of predictions used in the statistical analysis.~\Cref{fig:mhnl_signal} shows the reconstructed \mhnl for signal samples with various simulated masses and $\ctau = 10$~mm. The \mhnl resolution for channels with $\mu\mu$ DVs is the best, followed by $\mu e$ and $ee$ DVs. This is due to the use of the kinematics of the track object and not of the lepton object in the reconstruction of this variable. Since GSF tracks don't fully account for radiation losses from electrons, they give a worse momentum measurement of the HNL decay products, and hence a worse reconstructed \mhnl value.
+To exploit the fact that the different background components have different DV mass distributions, the chosen variable  in the HF-CRs for the statistical analysis, described later in~\cref{sec:sig_ext}, is \mdv itself. On the other hand, since the HNL signal extraction is done from the SRs, the reconstructed HNL mass (\mhnl) introduced in the 2022 analysis (details of calculation in Appendix A of~\cite{PhysRevLett.131.061803}) is used for its strong discrimination power. The reconstruction uses energy-momentum conservation in the HNL production ($W\to\mathcal{N}\ell_1$) and decay ($\mathcal{N}\to\ell_1\ell_2\nu$) to get around the lack of measurement of the neutrino kinematics. The MC samples are used to build the templates of predictions used in the statistical analysis.~\Cref{fig:mhnl_signal} shows the reconstructed \mhnl for signal samples with various simulated masses and $\ctau = 10$~mm. The \mhnl resolution for channels with $\mu\mu$ DVs is the best, followed by $\mu e$ and $ee$ DVs. This is due to the use of the kinematics of the track object and not of the lepton object in the reconstruction of this variable. Since GSF tracks don't fully account for radiation losses from electrons, they give a worse momentum measurement of the HNL decay products, and hence a worse reconstructed \mhnl value.
 
 \begin{figure}[!ht]
     \centering
@@ -367,21 +370,21 @@ The Random Crossing background consists of a pair of uncorrelated tracks crossin
     \label{fig:rc_method}
 \end{figure}
 
-In the first step, a pool of tracks passing the track selection requirements of VSI is created from all available data events. The pool is created using tracks from events which do not have any prompt lepton candidates and hence do not show up in the SRs or the HF-CRs defined in this analysis. From this pool, track pairs are randomly selected (with replacement) which would could or could not come from the same event. In the last step, these track pairs are passed through VSI and a DV reconstruction is attempted. The resulting set of DVs are completely uncorrelated to each other, and their kinematics represent those of the RC DVs observed in data.
+In the first step, a pool of tracks passing the track selection requirements of VSI is created from all available data events. From this pool, track pairs are randomly selected (with replacement) which are required to come from different events. In the last step, these track pairs are passed through VSI and a DV reconstruction is attempted. The result is a set of artificial DVs representative of the vertices expected to result from random track crossings.
 
 The probability to obtain a DV from a track pair ($p(\text{DV|pair})$) is given by:
 \begin{equation}
     p(\text{DV|pair}) \approx \lim_{N_\text{Attempts}\to \infty}\frac{N_\text{DV}}{N_\text{Attempts}}.
 \end{equation}
-where $N_\text{Attempts}$ is the number of times a DV reconstruction is attempted using track pairs and $N_\text{DV}$ is the number of times a DV was successfully reconstructed. The number of predicted RC DVs ($N_\text{Predicted crossings}$), hence, follows as:
-\begin{equation}
+where $N_\text{Attempts}$ is the number of times a DV reconstruction is attempted using track pairs and $N_\text{DV}$ is the number of times a DV was successfully reconstructed in the attempts. The number of predicted RC DVs ($N_\text{Predicted crossings}$), hence, follows as:
+\begin{equation}\label{eq:crossings}
     N_\text{Predicted crossings} = p(\text{DV}|\text{Pair}) \times N_\text{Real} = N_{DV} \times \frac{N_\text{Real}}{N_\text{Attempts}}.
 \end{equation}
-Therefore, each artificially reconstructed RC DV is weighted by a factor $\frac{N_\text{Real}}{N_\text{Attempts}}$, where $N_\text{Real}$ is the number of RC DVs found in the region devoid of prompt leptons. The weighting is typically done bin-by-bin since the various kinematic cuts applied in the analysis morph the kinematics of the DV object.
+Therefore, each artificially reconstructed RC DV is weighted by a factor $\frac{N_\text{Real}}{N_\text{Attempts}}$, where $N_\text{Real}$ is the number of combinatorial track pairs found in data. Care is taken to ensure that~\cref{eq:crossings} are representative of unrelated track pairs. Correlated track pairs from decaying resonances should not enter $N_\mathrm{Real}$, as such pairs do not occur randomly, and the DV that may result from them are estimated using dedicated other techniques. To ensure this, both $N_\mathrm{Real}$ and $N_\mathrm{Attempts}$ are obtained by counting pairs with $m_\mathrm{Pair}>6$~GeV to reject low-mass hadron decays, and $|\Delta\phi_\mathrm{Pair}|>2.4$ to reject Drell-Yan and resonant $Z$ decay events. In addition, the normalisation is performed separately for events that contain prompt leptons and events that don’t. The normalisation weights are obtained separately for each DV flavor.
 
-Finally, the RC DV candidate is combined with a prompt lepton candidate from a data event to yield a complete signature defining the RC background in this search. The kinematics of this 3-lepton system are then used to reconstruct variables that this analysis is sensitive to, such as \mdv and \mhnl.
+Finally, the RC DV candidate is combined with the prompt lepton to yield a complete signature defining the RC background in this search. The kinematics of this 3-lepton system are then used to reconstruct variables that this analysis is sensitive to, such as \mdv and \mhnl.
 
-The RC estimate is successfully validated in a phase space rich in this background and devoid of the HF background, typically characterized by high \mdv ($>12$~GeV) and large DV opening angles ($\Delta R_{\ell\ell}>0.5$). The background is found to be extremely suppressed with very low total yields in all regions, as shown in~\cref{tab:rc_yields}. 
+The kinematics and normalization of the RC estimate are successfully validated in a phase space rich in this background. The $m_{\ell\ell\ell}$ pre-selection is removed, the fiducial volume cut is relaxed ($2\text{ mm}<\rdv<300\text{ mm}$, and an added high \mdv ($>2$~GeV) requirement is imposed. From this phase space, all events passing the SR cuts are veto-ed to define the validation region. The background is found to be extremely suppressed with very low expected yields in all regions, as shown in~\cref{tab:rc_yields}. 
 
 \begin{table}[!htbp]
     \centering
@@ -429,7 +432,7 @@ As previously mentioned, six channels are used in this analysis, and a global si
 %\end{landscape}
 
 \subsection{Uncertainties}
-All relevant sources of uncertainties are considered in this analysis which can effect the estimate on the background and signal MC predictions. $\pm 1 \sigma$ variations are considered for all uncertainties, and are propagated to the statistical fit. The standardization of LRT objects in this version of the analysis allowed for a better understanding of the uncertainties on these objects in close coordination with the Combined Performance (CP) groups. The use of MC simulations for the modeling of HF decay background warranted an inclusion of the theoretical modeling uncertainties on them, which have been treated in recommendation from the Physics Modeling Group. This section describes all the sources of systematic uncertainties considered in this analysis.
+All relevant sources of uncertainties are considered in this analysis which can affect the estimate on the background and signal MC predictions. One standard deviation ($\pm 1 \sigma$) variations are considered for all uncertainties, and are propagated to the statistical fit. The standardization of LRT objects in this version of the analysis allowed for a better understanding of the uncertainties on these objects in close coordination with the Combined Performance (CP) groups. The use of MC simulations for the modeling of HF decay background warranted an inclusion of the theoretical modeling uncertainties on them, which have been estimated using the prescription from the Physics Modeling Group. This section describes all the sources of systematic uncertainties considered in this analysis. The net impact of the systematic uncertainties on the analysis is shown in~\cref{tab:uncertainty}. Systematics are found the be a sub-dominant source of uncertainties and the results are largely dominated by the statistically limited dataset.
 
 \subsection*{Integrated Luminosity}
 The LUCID2 detector was used to measure the integrated luminosity collected by ATLAS during Run-2 with a central value of 140.1 pb$^{-1}$ and an error of 0.83\%~\cite{DAPR-2021-01}.
@@ -438,18 +441,18 @@ The LUCID2 detector was used to measure the integrated luminosity collected by A
 While pileup is modeled in simulation, the simulated collision conditions are not identical to those experienced during the data collection. A centrally managed tool is used to re-weight signal and background MC events and take into account the impact of pileup during the various data periods.
 
 \subsection*{Trigger}
-The efficiency of triggering by a muon or an electron in MC is adjusted to that in data by looking at $Z\to\ell\ell$ events. The recommendations from the CP groups are used to account for these uncertainties on the primary triggering object, which is the prompt lepton in this analysis.
+The efficiency of triggering by a muon or an electron in MC is adjusted to that in data by looking at $Z\to\ell\ell$ events. The efficiency calibrations from the CP groups are used to account for these uncertainties on the primary triggering object, which is the prompt lepton in this analysis.
 
 \subsection*{Lepton Momentum}
-The momentum of the leptons measured in MC are calibrated for detector conditions using Z and $J/\psi$ decays. The standard CP recommendations are used for all leptons used in this analysis.
+The momentum of the leptons measured in MC are calibrated for detector conditions using Z and $J/\psi$ decays. The standard CP efficiency calibrations are used for all leptons used in this analysis.
 
 \subsection*{Lepton Reconstruction and Identification}
-The muons in this analysis are either standard or LRT, all accepted using the \texttt{Medium} identification WP. For standard muons, the standard CP recommendations are applied obtained using $Z(J/\psi)$ decays for muon $\pT >(<)\,10$~GeV in a tag and probe analysis~\cite{MUON-2018-03}. 
+The muons in this analysis are either standard or LRT, all accepted using the \texttt{Medium} identification WP. For standard muons, the standard CP efficiency calibrations are applied obtained using $Z(J/\psi)$ decays for muon $\pT >(<)\,10$~GeV in a tag and probe analysis~\cite{MUON-2018-03}. 
 For LRT muons, the reconstruction and identification efficiencies are studied separately and are measured indirectly. The efficiency to measure a \texttt{Medium} muon can be divided into two factors:
 \begin{equation}
     \epsilon\, (\text{Medium }\mu) \approx \epsilon\, (\text{Medium }\mu \,|\,\mathrm{ID}) \times \epsilon (\mathrm{ID}),
 \end{equation}
-Here, $\epsilon\, (\text{LRT ID})$ is directly measured using $K_S\to\pi^+\pi^-$ decays~\cite{IDTR-2021-03}. Furthermore, it is postulated that
+Here, $\epsilon\, (\text{LRT ID})$ is roughly estimated using $K_S\to\pi^+\pi^-$ decays~\cite{IDTR-2021-03}. Furthermore, it is postulated that
 \begin{equation}
     \epsilon\, (\text{Medium LRT }\mu \,|\,\text{LRT ID})\approx\epsilon\, (\text{Medium Standard }\mu \,|\,\text{Standard ID}),
 \end{equation}
@@ -462,7 +465,7 @@ A similar decomposition also applies to the reconstruction and identification of
 The electron reconstruction efficiency is accounted with a 3\% uncertainty for both the standard and LRT objects. The \texttt{Medium} electron identification efficiency is measured with a 4\% uncertainty, and \texttt{VeryLooseNoPix} electrons are identified with a 5\% uncertainty.
 
 \subsection*{Lepton Isolation}
-The CP recommendations are used on the calibration of the isolation applied on the prompt and displaced muons, while a conservative 2\% uncertainty is applied on the electron isolation efficiency. Since the same working point is applied on standard and LRT objects without modifications, the same uncertainties are applied to both of them.
+The CP efficiency calibrations are used on the calibration of the isolation applied on the prompt and displaced muons, while a conservative 2\% uncertainty is applied on the electron isolation efficiency. Since the same working point is applied on standard and LRT objects without modifications, the same uncertainties are applied to both of them.
 
 \subsection*{Flavor Tagging}
 Uncertainties from the measurement of the jet energy scale and resolution were found to have no impact on this analysis. The systematic uncertainties from the calibration of the flavor tagging algorithm are considered using the medium reduction scheme, as recommended by the flavor tagging CP group.
@@ -471,7 +474,7 @@ Uncertainties from the measurement of the jet energy scale and resolution were f
 In the 2022 analysis, the HNL process was modeled at LO using \textsc{Pythia}, and the MC prediction was attached a modeling uncertainty of $3\% \oplus 5\%$, with the former coming from the measurement of the $W$ production cross section and the latter from the analytical calculation of the HNL branching fraction compared to the prediction from \textsc{MadGraph5}. It was found that the spin correlations of the HNL decay products were not well modeled by \textsc{Pythia}, and a dedicated reweighting procedure was applied to adjust for the same. In this analysis, the predictions are modeled at NLO with the spin correlation well modeled by the MC event generators. Hence, a reduced yet conservative uncertainty of 5\% is considered on the signal prediction.
 
 \subsection*{Random Crossing Modeling}
-The random crossing background estimate reuses ID tracks to create a preliminary track pool, which are later used to reconstruct DVs with uncorrelated objects. The statistical correlation coming from such a multi-count is accounted using a bootstrapping mechanism. Furthermore, alternate track sampling methods account for uncertainties coming from the bias in the sampling strategy of such tracks. A conservative 50\% uncertainty is applied on the random crossing background estimate to cover the above effects. Given the very small contribution of this background in all the considered regions, this uncertainty is expected to have a negligible effect.
+The random crossing background estimate reuses ID tracks to create a preliminary track pool, which are later used to reconstruct DVs with uncorrelated objects. The statistical correlation coming from such a multi-count is accounted using a bootstrapping~\cite{ATL-PHYS-PUB-2021-011} mechanism. Furthermore, alternate track sampling methods account for uncertainties coming from the bias in the sampling strategy of such tracks. A conservative 50\% uncertainty is applied on the random crossing background estimate to cover the above effects. Given the very small contribution of this background in all the considered regions, this uncertainty is expected to have a negligible effect.
 
 \subsection*{HF Background Modeling}
 As described in~\cref{sec:data_mc_samples}, $t\bar{t}$ and $V+$jets MC samples are used to model the background from HF decays. Theoretical uncertainties are evaluated for both of these MC simulations following the recommendations of the ATLAS Physics Modeling Group:
@@ -521,10 +524,10 @@ As described previously, a dedicated uncertainty is assigned on the template bui
 Lastly, the MC statistics uncertainty is considered on the signal prediction as well coming from the limited statistics considered in the production of the signal MC samples.
 
 \subsection{Simultaneous fit}
-A global likelihood minimizing fit is performed to extract a signal strength for each simulated signal point. A likelihood function $\mathcal{L}(\alpha)$ is used to define a probability density function for a hypothesis $\alpha$. The extended likelihood $\mathcal{L}$ consists of a product of likelihood functions ($\mathcal{P}$s) of the SR yield and CR yield. The function is shown without a channel indexing for simplicity, but a global product runs over all five SRs and six CRs considered in the analysis:
+A global likelihood minimizing fit is performed to extract a signal strength for each simulated signal point. A likelihood function $\mathcal{L}$ is used to define a global probability density function of this measurement for. The extended likelihood $\mathcal{L}$ consists of a product of likelihood functions ($\mathcal{P}$s) of the SR yield and CR yield. The function is shown without a channel indexing for simplicity, but a global product runs over all five SRs and six CRs considered in the analysis:
 \begin{equation}
 \label{eqn:likelihood}
-    \mathcal{L} = \mathcal{P}( N_{\mathrm{data}}^{\mathrm{SR}}| \mu \cdot N_{\mathrm{signal}}^{\mathrm{SR}} +  
+    \mathcal{L} = \mathcal{P}( N_{\mathrm{data}}^{\mathrm{SR}}| \mu \cdot N_{\mathrm{signal}}^{\mathrm{SR}} + 
     \mu_{\mathrm{HF}}  \cdot N_{\mathrm{HF}}^{\mathrm{SR}} + N_{\mathrm{RC}}^{\mathrm{SR}} ) \cdot 
     \mathcal{P}(N_{\mathrm{data}}^{\mathrm{CR}} | \mu_{\mathrm{HF}}\cdot N_{\mathrm{HF}}^{\mathrm{CR}} + N_{\mathrm{RC}}^{\mathrm{CR}}) \cdot                                                    \prod_{i=1}^{n_{\theta_i}}\mathrm{N}(\tilde{\theta_i}| \theta_i),
 \end{equation}
@@ -538,7 +541,6 @@ The likelihood is maximized to determine the best fit value of the global signal
     \lambda(\mu) = \frac{\mathcal{L}(\mu,\hat{\hat{\theta_\mu}})}{\mathcal{L}(\hat{\mu},\hat{\theta_\mu})},
 \end{equation}
 where $\hat{\mu}$ and $\hat{\theta_\mu}$ are estimators for the signal strength and nuisance parameters that maximize the likelihood globally, and $\hat{\hat{\theta_\mu}}$ is a conditional likelihood maximizing estimator for a specific $\mu$. 
-A value of $\lambda$ close to 1 indicates a disagreement between the measurement and the S+B hypothesis.
 
 The test statistic is built using the profile likelihood ratio which is minimized to determine the best fit value:
 \begin{equation}
@@ -557,9 +559,9 @@ The CL$_{s}$~\cite{Read_2002} method is used to exclude signal hypothesis since 
 \begin{equation}
     \mathrm{CL}_s = \frac{p_\mu}{p_0}.
 \end{equation}
-The 95\% confidence level upper limit on the signal strength can be found by varying $\mu$ until CL$_s (\mu_\mathrm{limit})=0.05$. Signal models are excluded if $\mu_{\mathrm{limit}} < 1$.
+The 95\% confidence level (CL) upper limit on the signal strength can be found by varying $\mu$ until CL$_s (\mu_\mathrm{limit})=0.05$. Signal models are excluded if $\mu_{\mathrm{limit}} < 1$.
 
-\Cref{fig:pre_fit_CR} shows the \mdv distribution of measured data, random crossing background, and expected HF background in the six CRs. Good agreement between the data and predictions is observed across all regions within statistical (shown by black lines around data points) and systematic uncertainties (shown by hashed bands around the HF background estimate), with some discrepancies expected to be corrected by the fit.
+\Cref{fig:pre_fit_CR} shows the \mdv distribution of measured data, random crossing background, and expected HF background in the six CRs. Good agreement between the data and predictions is observed across all regions within errors in data counting (shown by black lines around data points) and systematic uncertainties (shown by hashed bands around the HF background estimate), with some discrepancies expected to be corrected by the fit.
 
 \begin{figure}[!htbp]
     \centering
@@ -575,7 +577,7 @@ The 95\% confidence level upper limit on the signal strength can be found by var
 
 Similarly,~\cref{fig:pre_fit_SR} shows the \mhnl distributions of measured data and expected backgrounds in the five SRs. A good compatibility is also seen between the background predictions and the observed data, with the exception of a few outlying events, an analysis of which is presented in~\cref{sec:event_excess}.
 
-\begin{figure}[!ht]
+\begin{figure}[!htbp]
     \centering
     \subfloat[SR \uuu]{\includegraphics[width=0.25\textwidth]{figures/analysis_strategy/pre_fit/SRuuu.pdf}}
     \subfloat[SR \uue]{\includegraphics[width=0.25\textwidth]{figures/analysis_strategy/pre_fit/SRuue.pdf}}
@@ -586,13 +588,13 @@ Similarly,~\cref{fig:pre_fit_SR} shows the \mhnl distributions of measured data 
     \label{fig:pre_fit_SR}
 \end{figure}
 
-\section{Background Only Fits}
-Background only fits are performed to ascertain the stability of the fit structure and test the impact of the considered sources of systematic errors. Two kinds of background only fits are performed:
+\section{Background-Only Fits}
+Background-only fits are performed to ascertain the stability of the fit structure and test the impact of the considered sources of systematic errors. Two kinds of background-only fits are performed:
 
 \begin{itemize}
-    \item Asimov fit: An Asimov (pseudo-)dataset~\cite{Cowan:2010js}, built using the expected number of events, is used to test the basic structure of the simultaneous fit, i.e. its ability to reduce the impact of nuisance parameters on the background prediction.~\Cref{fig:asimov_pre_post} shows the impact of the fit in the \uuu control region. After the fit, an HF normalization factor $\mathbf{\mu_\mathrm{HF}=1.00^{.11}_{-.10}}$ is observed. An error of the order of 10\% on the measurement shows an impressive reduction in errors from the fit and a powerful ability to estimate this background. 
+    \item Asimov fit: An Asimov (pseudo-)dataset~\cite{Cowan:2010js}, built using the expected number of events, is used to test the basic structure of the simultaneous fit, i.e. its ability to reduce the impact of nuisance parameters on the background prediction.~\Cref{fig:asimov_pre_post} shows the impact of the fit in the \uuu control region. After the fit, an HF normalization factor $\mathbf{\mu_\mathrm{HF}=1.00^{.11}_{-.10}}$ is observed. An error of the order of 10\% on the measurement shows a reduction in errors from the fit in comparison to pre-fit, and a powerful ability to estimate this background. This reduction in errors improves the measurement sensitivity with respect to a simple cut and count analysis.
 
-    \begin{figure}[!htbp]
+    \begin{figure}[!ht]
         \centering
         \subfloat[Pre-fit]{\includegraphics[width=0.35\textwidth]{figures/analysis_strategy/bkg_only_fits/CRuuu.pdf}}
         \subfloat[Post-fit]{\includegraphics[width=0.35\textwidth]{figures/analysis_strategy/bkg_only_fits/CRuuu_postFit.pdf}}
@@ -600,7 +602,7 @@ Background only fits are performed to ascertain the stability of the fit structu
         \label{fig:asimov_pre_post}
     \end{figure}
 
-    ~\Cref{fig:asimov_pull} shows the constraints of the nuisance parameters considered (except for template building systematics) in the analysis. None of the experimental systematics are significantly constrained compared to their pre-fit $1\sigma$ values. On the other hand, the background modeling systematics (PS-parton shower, ME-matrix element, FSR-final state radiation) are seen to be constrained. This is expected given their relatively large pre-fit uncertainties, especially in the signal regions. This is deemed acceptable for the purpose of estimating this background in this analysis and the net effect is a reduction in overall errors.
+    ~\Cref{fig:asimov_pull} shows the constraints of the nuisance parameters considered (except for template building systematics) in the analysis. None of the experimental systematics are significantly constrained compared to their pre-fit $1\sigma$ values. On the other hand, the background modeling systematics (PS-parton shower, ME-matrix element, FSR-final state radiation) are seen to be constrained. While is expected given their relatively large pre-fit uncertainties, especially in the signal regions, the constraints imply that the variation model recommended by the collaboration may not be sufficiently granular for estimating the HF background using these MC simulations. Considering the relatively small impact of these systematics on the overall measurement, the constraints are deemed acceptable for the purpose of estimating this background in this analysis and the net effect is a reduction in overall errors.
 
     \begin{figure}[!htbp]
         \centering
@@ -610,7 +612,7 @@ Background only fits are performed to ascertain the stability of the fit structu
         \label{fig:bkg_only_pulls}
     \end{figure}
 
-    \item Data fit: A background only fit is performed using measured ATLAS data in both the signal and control regions. SSuch a fit tests the compatibility of the of the asimov and data fit, in the capacity of treatment of systematics as well as that of the background normalization factor, and gives an indirect sign of any excesses beyond expectation in the region where the background is concentrated. An HF normalization factor $\mathbf{\mu_\mathrm{HF}=1.04^{.12}_{-.10}}$ is observed, which is highly compatible with what is measured by the Asimov background only fit with comparable errors.~\Cref{fig:data_pull} shows the pulls and constraints of the nuisance parameters in the data fit. The constraints are very similar to what is seen in the Asimov fit. Some pulls, which represent the compatibility of $\theta$ measurements between $\mu_\mathrm{HF}=0$ and the measured $\mu_\mathrm{HF}$, are observed. Furthermore, the template building systematic in bins 32 ($\mhnl=15.5-16$~GeV) and 39 ($\mhnl=19-19.5$~GeV) of SR \euu is pulled by $+.6\sigma$. This is expected because of the 2 excess data event observed in those bins which are under-predicted by the MC simulations.
+    \item Data fit: A background-only fit is performed using measured ATLAS data in both the signal and control regions. Such a fit tests the compatibility of the of the Asimov and data fit, in the capacity of treatment of systematics as well as that of the background normalization factor, and gives an indirect sign of any excesses beyond expectation in the region where the background is concentrated. An HF normalization factor $\mathbf{\mu_\mathrm{HF}=1.04^{.12}_{-.10}}$ is observed, which is highly compatible with what is measured by the Asimov background-only fit with comparable errors.~\Cref{fig:data_pull} shows the pulls and constraints of the nuisance parameters in the data fit. The constraints are very similar to what is seen in the Asimov fit. Some pulls, which represent the compatibility of $\theta$ measurements between $\mu_\mathrm{HF}=0$ and the measured $\mu_\mathrm{HF}$, are observed. Furthermore, the template building systematic in bins 32 ($\mhnl=15.5-16$~GeV) and 39 ($\mhnl=19-19.5$~GeV) of SR \euu is pulled by $+.6\sigma$. This is expected because of the 2 excess data event observed in those bins which may under-predicted by the MC simulations, or the events could just be random fluctuations given the limited size of the dataset.
 \end{itemize}
 
-Overall, the background only fits using the Asimov and the real dataset show that the background prediction is robust in the regions where the MC simulations predict events. The 1 extra event seen in SR \eeu and and 2 extra events seen in SR \euu lie in the tails of the \mhnl spectrum where the statistics in the MC simulations are not sufficient and hence under-predict the observed data.
+Overall, the background-only fits using the Asimov and the real dataset show that the background prediction is robust in the regions where the MC simulations predict events. The 1 extra event seen in SR \eeu and and 2 extra events seen in SR \euu lie in the tails of the \mhnl spectrum where the statistics in the MC simulations are not sufficient and hence under-predict the observed data.
