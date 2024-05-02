@@ -1,9 +1,8 @@
 \documentclass{brandeis-dissertation3.14}
 
 \usepackage{amsmath}
+\usepackage{bm}
 \usepackage{amssymb}
-\usepackage{hyperref}
-\usepackage{cleveref}
 \usepackage[sorting=none]{biblatex}
 \usepackage{graphicx}
 \usepackage{subfig}
@@ -17,6 +16,9 @@
 \usepackage[compat=1.1.0]{tikz-feynman}
 \tikzfeynmanset{warn luatex=false}
 \usepackage{Dissertation_Addepalli-defs}
+\usepackage{placeins}
+\usepackage[hypertexnames=false]{hyperref}
+\usepackage{cleveref}
 
 %\renewcommand\thechapter{\Roman{chapter}}
 %\renewcommand\thesection{\arabic{section}}
@@ -44,31 +46,37 @@ Dr. Maximilian Emanuel Goblirsch-Kolb, European Organization for Nuclear Researc
 \setlength{\cfttabnumwidth}{3em}
 \setlength{\cftfignumwidth}{3em}
 
-%\begin{dissertation-acknowledgements}
-%I want to thank me, for believing in me and working hard.
-%\end{dissertation-acknowledgements}
+\begin{dissertation-acknowledgements}
+
+\end{dissertation-acknowledgements}
 %\addcontentsline{toc}{section}{Acknowledgements}
 
 \begin{dissertation-abstract}
-The existence of right-handed neutrinos with Majorana masses below the electroweak scale and in the sensitivity range of the LHC could give rise to the smallness of neutrino masses and matter-antimatter asymmetry in the universe. This analysis searches for long-lived right-handed neutrinos, called heavy neutral leptons (HNLs), produced through a $W$ boson decaying into a muon (electron) and a muon (electron) neutrino that will mix with an HNL. The ATLAS reconstruction chain went through significant improvements in preparation for data taking in 2022. The improved techniques for reconstructing the displaced signature of the long-lived HNL is applied to 140.1 fb$^{-1}$ of data used in this analysis collected at $\sqrt{s}=13$ TeV in 2015--2018. The search results are interpreted in scenarios where the HNL mixes with one more Standard Model neutrino.
+The existence of right-handed neutrinos with Majorana masses below the electroweak scale and in the sensitivity range of the LHC could give rise to the smallness of neutrino masses and matter-antimatter asymmetry in the universe. This analysis searches for long-lived right-handed neutrinos, called heavy neutral leptons (HNLs), produced through a $W$ boson decaying into a muon (electron) and a muon (electron) (anti-)neutrino that will mix with an HNL. The ATLAS reconstruction chain went through significant improvements in preparation for data taking in 2022. The improved techniques for reconstructing the displaced signature of the long-lived HNL are applied to 140.1 fb$^{-1}$ of data used in this analysis collected at $\sqrt{s}=13$ TeV in 2015--2018. The search results are interpreted in scenarios where the HNL mixes with one more Standard Model neutrino.
 \end{dissertation-abstract}
-\addcontentsline{toc}{section}{Abstract}
+%\addcontentsline{toc}{section}{Abstract}
 
 \doublespacing
+\pagestyle{fancy}
+\fancyhead{}
+\renewcommand{\headrulewidth}{0pt}
 
-\tableofcontents{}
+\addtocontents{toc}{\protect\setlength{\cftchapnumwidth}{5em}}
+\addtocontents{toc}{\protect\setlength{\cftsecnumwidth}{3em}}
+\addtocontents{toc}{\protect\setlength{\cftsubsecnumwidth}{3em}}
 
+\tableofcontents
 \clearpage
 
 \listoftables
-\addcontentsline{toc}{section}{List of Tables}
+%\addcontentsline{toc}{section}{List of Tables}
 \pagebreak
 \listoffigures
-\addcontentsline{toc}{section}{List of Figures}
+%\addcontentsline{toc}{section}{List of Figures}
 \pagebreak
 \setcounter{secnumdepth}{0}
 \chapter*{List of Abbreviations}
-\addcontentsline{toc}{section}{List of Abbreviations}
+%\addcontentsline{toc}{section}{List of Abbreviations}
 \input{list-of-abbs}
 \setcounter{secnumdepth}{2}
 
@@ -81,6 +89,7 @@ The existence of right-handed neutrinos with Majorana masses below the electrowe
 
 \chapter*{Introduction}
 \label{chap:intro}
+
 \addcontentsline{toc}{chapter}{Introduction}
 \input{chapters/introduction}
 
@@ -108,16 +117,29 @@ The existence of right-handed neutrinos with Majorana masses below the electrowe
 \label{chap:conclusion}
 \input{chapters/conclusion}
 
-\addcontentsline{toc}{chapter}{Bibliography}
+\addcontentsline{toc}{chapter}{References}
+\renewcommand{\bibname}{References}
+\singlespacing
+%\setlength{\bibitemsep}{0pt plus 1ex}
 \printbibliography
-% \renewcommand{\thechapter}{\Alph{chapter}}
-% \setcounter{section}{0}
-% \part*{Appendices}
-% \addcontentsline{toc}{part}{Appendices}
 
-% \clearpage
-% \chapter{HNL Mass Reconstruction}
-% \label{chap:HNL_mass}
-% \input{chapters/HNL_mass}
+\doublespacing
+\renewcommand{\thechapter}{\Alph{chapter}}
+\renewcommand{\chaptertitlename}{Appendix}
+\setcounter{chapter}{0}
+%\part*{Appendices}
+\addcontentsline{toc}{part}{Appendices}
+
+\chapter{Personal Contributions}
+\label{chap:pers_contri}
+\input{chapters/personal_contributions}
+
+\chapter{HNL Mass Reconstruction}
+\label{chap:HNL_mass}
+\input{chapters/HNL_mass}
+
+\chapter{Asymptotic Approximation versus Toys}
+\label{chap:asymp_vs_toys}
+\input{chapters/toys_vs_asymptotic}
 
 \end{document}

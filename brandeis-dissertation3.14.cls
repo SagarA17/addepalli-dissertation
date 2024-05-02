@@ -31,6 +31,7 @@
 \RequirePackage[english]{babel}
 \RequirePackage{csquotes}
 \RequirePackage{tocloft}
+\RequirePackage{fancyhdr}
 \AtBeginEnvironment{quote}{\singlespacing}
 \renewcommand\cfttoctitlefont{\normalsize\bfseries}
 \renewcommand\cftlottitlefont{\normalsize\bfseries}
@@ -62,6 +63,7 @@
 \renewcommand{\cftafterloftitle}{\hfill}
 \addto\captionsenglish{\renewcommand*\listtablename{\hfill LIST OF TABLES}}
 \renewcommand{\cftafterlottitle}{\hfill}
+\renewcommand*\l@chapter{\@dottedtocline{1}{0em}{1.0em}}
 
 \newcommand{\maketitlepage}{%
     \pagenumbering{gobble}
@@ -153,7 +155,7 @@
     %\newgeometry{top=1.4in}
     \pagestyle{plain}
     \begin{center}
-        \MakeUppercase{Abstract}\\
+        \MakeUppercase{\textbf{Abstract}}\\
         \vspace{1em}
         \@title\\
         \vspace{1em}

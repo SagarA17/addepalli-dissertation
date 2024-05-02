@@ -1,0 +1,153 @@
+This chapter outlines the calculation of the mass of the HNL candidate \mhnl which is the main discriminating variable used in the signal region. The calculation is obtained with permission from~\cite{PhysRevLett.131.061803}.
+
+The HNL mass (\mhnl) can be obtained using energy--momentum conservation in the HNL production ($W \rightarrow \mathcal{N}\ell_1$) and decay ($\mathcal{N} \rightarrow \ell_2 \ell_3 \nu$), where $\ell_1$ is the prompt lepton and $\ell_2$ and $\ell_3$ are the charged leptons in the DV.
+The problem can be summarized with the following equations. Four-momentum conservation in the $\mathcal{N}$ decay gives
+\begin{align}
+p^\mu_{\mathcal{N}}&=p^\mu_{2}+p^\mu_{3}+p^\mu_{ \nu } \equiv p^\mu_{23}+p^\mu_{\nu}.\label{eq:HNL4vec}
+\end{align}
+Four-momentum conservation in the $W$ decay gives
+\begin{align}
+p^\mu_{W}&=p^\mu_{1}+p^\mu_{\mathcal{N}} =  p^\mu_{1} + p^\mu_{23} +p^\mu_{ \nu }.\label{eq:W4vec}
+\end{align}
+%
+The following are defined
+%
+\begin{align}
+% p_{23} &\equiv p_{2}+p_{3} \\
+% p_{123} &\equiv p_{1}+p_{23} \\
+p_{23}^{2}&=E_{23}^{2}- \vert \vec{p}_{23} \vert ^{2} \equiv m_{23}^{2} \nonumber \\
+p_{23}^{\parallel} &\equiv \vec{p}_{23}\cdot\bm{\hat{v}} \nonumber \\
+p_{23}^{\bot} &\equiv  \vert \vec{p}_{23}-p_{23}^{\parallel}\bm{\hat{v}} \vert \nonumber
+\end{align}
+%
+where $m$, $E$, and $|\vec p|$ are the mass, energy, and momentum-vector magnitude of the particles indicated by their subscript and $\bm{\hat{v}}$ is the flight direction of the HNL given by the vector connecting the PV and DV.
+
+The solution to the HNL mass is presented in the coordinate system $k = (\bm{\hat{x'}}, \bm{\hat{y'}}, \bm{\hat{z'}})$, which is rotated relative to the ATLAS coordinate system, such that the origin of the $k$-frame is at the PV and the $z'$-axis points along the flight direction of the HNL. The definition of this coordinate system is
+\begin{align}
+\bm{\hat{z'}} = \bm{\hat{v}}, \ \ \ \bm{\hat{x'}} = \frac{\vec{p}_{23} \times \bm{\hat{z'}}}{|\vec{p}_{23} \times \bm{\hat{z'}}|}, \ \ \ \bm{\hat{y'}} = \bm{\hat{z'}} \times \bm{\hat{x'}}. \nonumber
+\end{align}
+%
+The momenta of $\ell_2$ and $\ell_3$ constrain the components of the neutrino momentum orthogonal to $\vec{p}_{\mathcal{N}}$. This means that energy--momentum conservation in the $W$ and $\mathcal{N}$ decays can be expressed in terms of one unknown variable $\alpha$, which is the component of neutrino momentum in the $\bm{\hat{z'}}$ direction.
+To express \cref{eq:W4vec,eq:HNL4vec} in terms of $\alpha$, the following quantities are defined
+\begin{align}
+\vec{p'}_{23} &\equiv \vec{q} \label{eq:q_def_1} \\
+% E_{23} &= \sqrt{q^2 + m_{23}^2} \label{eq:q_def_2} \\ 
+\vec{q}_{\:\:} &= (0,\: |\vec{p}_{23} \times \bm{\hat{z'}}| \equiv q_{\perp},\: \vec{p}_{23} \cdot \bm{\hat{z'}} \equiv q_{z}) \label{eq:q_def_2} \\
+\vec{p'}_\nu &=( 0,\: -q_{\perp}, \: \alpha)  \label{eq:q_def_3} \\
+E'_\nu &= \sqrt{q_{\perp}^2+\alpha^2}. \label{eq:alpha_E}
+\end{align}
+%
+Squaring \cref{eq:W4vec} gives
+\begin{align}
+p^{'2}_W  = m_W^2 = m_1^2 + m_\nu^2 + m_{23}^2  + 2p'_1 \cdot (p'_{23}+ p'_\nu) + 2 p'_{23} \cdot p'_\nu \label{eq:w_mass} 
+\end{align}
+%
+where
+%
+\begin{align}
+% p^\mu_{23}+ p^\mu_\nu &= (E_{23}+E_\nu, \: 0,\:  0, \: q_z + \alpha)\label{eq:simplifying_mw_1}\\
+p'_1 \cdot (p'_{23}+ p'_\nu) &= E'_1 (E'_{23}+ E'_\nu) - p'_{1,z}(q_z + \alpha)  \nonumber \\   % \label{eq:simplifying_mw_1}
+p'_{23} \cdot p'_\nu &= E'_{23}E'_\nu + q_{\perp}^2 - q_z\alpha.  \nonumber  % \label{eq:simplifying_mw_2}
+\end{align}
+%
+In the energy regime of interest, the charged leptons and neutrino can be treated as massless particles, such that $m_1 = m_\nu = 0$. 
+Rearranging \cref{eq:w_mass} to solve for $E_\nu$ gives
+%
+\begin{align}
+E'_\nu = A  + B\alpha \label{eq:Enu}
+\end{align}
+% 
+where
+\begin{align}
+A = \frac{(m_W^2 - m_{23}^2)/2 - E'_1E'_{23} + p'_{1,z}q_z - q_{\perp}^2}{E'_1 + E'_{23}}, \ \ \ B = \frac{p'_{1,z} + q_z}{E'_1 + E'_{23}} \nonumber
+\end{align}
+%
+Subtracting \cref{eq:Enu} from \cref{eq:alpha_E} gives the following quadratic expression in $\alpha$
+%
+\begin{align}
+% A  + B\alpha &= \sqrt{q_{\perp}^2 + \alpha^2} \\
+ (B^2 -1)\alpha^2 + 2&AB\alpha + A^2 - q_{\perp}^2 = 0.   \nonumber  % \label{eq:quadforalpha}
+% q_{\perp}^2 + \alpha^2  &=2AB\alpha + A^2 + B^2\alpha^2 \\ 
+\end{align}
+%
+The solution for $\alpha$ is therefore
+\begin{align}
+\alpha= \frac{-AB \pm \sqrt{(B^2-1)q_{\perp}^2 + A^2}}{(B^2-1)}. \label{eq:alpha_soln}
+\end{align}
+%
+Both solutions for $\alpha$ were studied using simulated HNL events and it was noted that the solution that led to a smaller $|\vec{p}_\mathcal{N}|$ typically led to a value for \mhnl that was closer to the simulated $m_\mathcal{N}$. This solution often corresponded to forward emission of the neutrino with respect to the HNL decay. Therefore, the definition of \mhnl in the analysis uses the solution with the positive radical.
+
+The expression for $\alpha$ in \cref{eq:alpha_soln} depends on $m_W$.
+ATLAS has measured the $W$-boson pole mass to be $M_W=80.370 \pm 0.019$~GeV~\cite{STDM-2014-18}. This measurement is combined in Ref.~\cite{ParticleDataGroup:2020ssz} with results from other collider experiments to provide a measurement of the $W$-boson width, $\Gamma_W = 2.195 \pm 0.083$~GeV.
+Since the $W$ mass has a width, then if $m_W= M_W$ in \cref{eq:alpha_soln} it is possible that there is no real solution for $\alpha$.
+Instead of rejecting these events, $m_W$ is set equal to the median $W$ mass in the kinematically allowed region ($m_{W, \mathrm{med}}$). This ensures that $\alpha$ (and correspondingly \mhnl) always has a real solution.
+
+To define the kinematically allowed region, the minimum $W$ mass that is consistent with the charged-lepton decay products ($m_{W, \mathrm{min}}$) is computed. From \cref{eq:w_mass}, the mass of the $W$ boson is given by
+\begin{align}
+m_W^2 &=  m_{23}^2 +2\left(E'_1E'_{23} + E'_\nu(E'_1 + E'_{23}) - p'_{1,z}q_z + q_{\perp}^2 -\alpha(p'_{1,z} + q_z) \right) \label{eq:wmass}
+\end{align}
+%
+and $m_{W, \mathrm{min}}$ occurs where
+\begin{align}
+\frac{d(m_W^2/2)}{d\alpha} &=  (E'_1 + E'_{23})\frac{dE'_\nu}{d\alpha} - (p'_{1,z} + q_z) = 0. \label{eq:min_W_alpha}
+\end{align}
+Using
+%
+\begin{align}
+\frac{dE'_\nu}{d\alpha} = \frac{d\sqrt{q_{\perp}^2+\alpha^2}}{d\alpha} = \frac{\alpha}{E'_\nu} \nonumber
+\end{align}
+%
+in \cref{eq:min_W_alpha}, the chosen value of $\alpha$ that gives the minimum $m_W$ is
+%
+\begin{align}
+\alpha =  \frac{q_\perp B }{\sqrt{1-B^2}}. \label{eq:min_alpha}
+\end{align}
+%
+Substituting \cref{eq:min_alpha} into \cref{eq:wmass}, the minimum $W$ boson mass is
+\begin{align}
+m^2_{W,\mathrm{min}} &=  m_{23}^2 +2\left(E'_1E'_{23}  + (E'_1+E'_{23})\sqrt{q_{\perp}^2 + \frac{q_\perp^2 B^2 }{1-B^2}  } -p'_{1,z}q_z + q_{\perp}^2- (p'_{1,z} + q_z )\frac{q_\perp B }{\sqrt{1-B^2}}\right).  \nonumber  % \label{eq:wmass_min}
+\end{align} 
+
+The cumulative probability for the $W$ boson to have a mass greater than $m_{W,\mathrm{min}}$ is used to find the median of the remaining distribution.
+The probability density function ($f$) for $m_W^2$ satisfies
+%
+\begin{equation*}
+f(m_W^2) \propto \frac{1}{(m_W^2-M_W^2)^2 + M_W^2\Gamma_W^2}.
+\end{equation*}
+%
+Therefore, the cumulative distribution function ($F$) is
+\begin{equation}
+F(m_W^2) = \frac{1}{\pi} \arctan\left( \frac{m_W^2-M_W^2}{M_W\Gamma_W}\right) + \frac{1}{2}. \label{eq:cdf}
+\end{equation}
+%
+The midpoint of the allowed kinematic region has a value of
+%
+\begin{equation*}
+F_{\mathrm{med}} = \frac{1+ F(m_{W,\mathrm{min}}^2)}{2}
+\end{equation*}
+%
+Rearranging \cref{eq:cdf} for $m_W^2$ gives
+%
+\begin{equation}
+m_W^2 = M_W^2 + \Gamma_W  M_W  \tan \left(\pi\left[F-\frac{1}{2}\right]\right). \label{eq:E_cdf}
+\end{equation}
+%
+Substituting $F=F_{\mathrm{med}}$ in \cref{eq:E_cdf}
+%in the rest frame of the $W$ boson%
+gives an expression for the median $W$ mass in the kinematically allowed region
+%
+\begin{align}
+% E_W^2 = m_{W, \mathrm{Med}}^2 &= m_W^2 + \Gamma_W m_W\tan(\pi(\mathrm{F}_{\mathrm{med}}-\frac{1}{2})) \\
+m_{W, \mathrm{med}}^2 &=  M_W^2 + \Gamma_W M_W \tan \left(\pi\left[\frac{1+ F(m_{W,\mathrm{min}}^2)}{2}-\frac{1}{2}\right]\right).  \nonumber  % \label{eq:mW_med}
+\end{align}
+%
+This value of $m_{W,\mathrm{med}}$ is used in \cref{eq:alpha_soln} to solve for $\alpha$.
+
+From \cref{eq:HNL4vec} and the definitions in \cref{eq:q_def_1,eq:q_def_2,eq:q_def_3,eq:alpha_E}, the expression for the HNL mass in terms of $\alpha$ is
+%
+\begin{align}
+\mhnl^2 &= m_{23}^2 + 2p'_\nu \cdot p'_{23} \nonumber \\
+&= m_{23}^2 + 2E'_{23}\sqrt{q_{\perp}^2+\alpha^2} + 2q_{\perp}^2 - 2q_z\alpha. \label{eq:HNL_mass}
+\end{align}
+%
+Substituting the expression for $\alpha$ in \cref{eq:alpha_soln} into \cref{eq:HNL_mass} gives the solution for the HNL mass.

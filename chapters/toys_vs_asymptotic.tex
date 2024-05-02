@@ -1,0 +1,24 @@
+The exclusion limits shown in~\cref{sec:limits} uses an Asymptotic approximation on $q_\mu$. Typically, such limits are instead reported using pseudo-experiments, or \textit{toys}, where a large number of fits are performed over a range of injected $\mu$ values to then obtain the CL$_s$ value for each $\mu$. For each toy, a pseudo-dataset is created assuming a Poisson distribution in each bin with the mean value equal to the expected number of signal (with a strength equal to the injected $\mu$) plus background events. The signal is then extracted using each such dataset, and the average $\hat{\mu}$ is obtained for that point. This ``scan" is used to interpolate and estimate $\mu_\mathrm{limit}$, along with the corresponding CL$_s$. For the comparison in this chapter, one hundred pseudo-experiments for the B and S+B hypotheses were performed over a range with one hundred points.
+
+A comparison is presented for two points at the boundary and one in the bulk of the exclusion contour for the 2QDH(IH) model since it presents the most complex fit structure with signal extracted from all regions. The values obtained for this comparison are summarized in~\cref{tab:asym_vs_toys}.
+
+\begin{table}[!ht]
+    \centering
+    \resizebox{\columnwidth}{!}{
+    \begin{tabular}{ccccccc}
+    \hline\hline
+         \mhnl, \ctau = & \multicolumn{2}{c}{3 GeV, 100 GeV} & \multicolumn{2}{c}{10 GeV, 10 GeV} & \multicolumn{2}{c}{15 GeV, 10 mm} \\
+         & Asymptotic & Toys & Asymptotic & Toys & Asymptotic & Toys \\
+         \hline
+        Observed 95\% & 0.16 & 0.26 & 0.60 & 0.62 & 3.9 & 4.1\\
+        Expected 95\% & 0.23 & 0.27 & 0.53 & 0.59 & 3.7 & 4.1\\
+        Expected $\pm1\sigma$ range & [0.16, 0.33] & [0.25, 0.42] & [0.32, 0.89] & [0.37, 0.88] & [2.2, 6.4] & [2.2, 5.4]\\
+        Expected $\pm2\sigma$ range & [0.11, 0.48] & [0.19, -] & [0.21, 1.46] & [0.29, -] & [1.4, 10.6] & [0.4, 9.1]\\
+        \hline \hline
+    \end{tabular}
+    }
+    \caption{Comparisons of the observed and expected limits and the errors on the expected limits obtained using the asymptotic approximation and toys for three representative HNL points in the 2QDH(IH) model. The $+2\sigma$ value is not obtained with toys for some samples and is shown using a dash (-).}
+    \label{tab:asym_vs_toys}
+\end{table}
+
+The comparison from these points shows that the central values are compatible within errors for the two methods of upper limit extraction. Furthermore, the range of the errors are similar between the two methods, which depicts that the asymptotic approximation is adept at estimating not just the central values accurately but also the error on them.
