@@ -20,7 +20,7 @@ The last and the most recently discovered piece of the SM is the scalar Higgs bo
 \subsection{Mathematical Structure}
 The Standard Model is a mass dimension-4 relativistic quantum field theory with nineteen free parameters. It is defined by the local $SU(3)_C \times SU(2)_L \times U(1)_Y$ gauge symmetry. (Roughly,) the three factors of the gauge symmetry give rise to the three fundamental interactions. The first of these is the $SU(3)_C$ gauge symmetry of QCD, where the $C$ stands for color, the quantum number of QCD. The $SU(2)_L \times U(1)_Y$ is the gauge symmetry followed in the EW theory, where the $L$ stands for left-handed, and $Y$ denotes the weak hypercharge, which related to the electric charge $Q$ and the third component of isospin $I_3$ as $Y=Q-I_3$, the quantum numbers of electroweak interaction. 
 
-The quantum states of the fermionic fields are denoted by $\psi$, which are bi-spinors. They obey the Dirac equation in the Clifford algebra defined using a representation of four $4\times4$ matrices, called gamma ($\gamma$) matrices which follow the anti-commutation relation 
+The quantum states of the fermionic fields are denoted by $\psi$, which are bi-spinors. They obey the Dirac equation ($(i\gamma^\mu \partial_\mu - m)\psi = 0$) in the Clifford algebra defined using a representation of four $4\times4$ matrices, called gamma ($\gamma$) matrices, which follow the anti-commutation relation 
 \begin{equation}
     \{\gamma^\mu, \gamma^\nu\}=2\eta^{\mu\nu}I_4,
 \end{equation}
@@ -28,7 +28,7 @@ where $\eta_{\mu\nu}$ is the Minkowski metric and $I_4$ is the $4\times4$ unit m
 \begin{equation}
     \psi_L=\frac{1}{2}(1-\gamma^5)\psi,\,\, \psi_R=\frac{1}{2}(1+\gamma^5)\psi.
 \end{equation}
-$\psi_{L(R)}$ is called the left-(right-)handed component of $\psi$, and $\gamma^5\equiv i\gamma^0\gamma^1\gamma^2\gamma^3$ is the fifth gamma matrix. Chirality is a Lorentz-invariant quantity but not a constant of motion, meaning that a pure left-handed state can gain a right-handed component during flight, and vice versa. The left-handed fermions of the same generation form a doublet of the $SU(2)_L$ symmetry. The quark doublets are represented as $Q_L\equiv (u_L\,\, d_L)^T$ and the lepton doublets are represented as $L_L \equiv (\nu_{e,L}\,\, e_L)^T$, with similar definitions for all three generations. The right-handed quarks, such as $u_R$ and $d_R$, and the right-handed charged leptons, such as $e_R$, are singlets of the $SU(2)_L$ symmetry whereas the right-handed neutrinos, $\nu_R$, would not have charges under any interaction. Right-handed neutrinos have not been observed in nature from direct or indirect measurements, and are not part of the SM. Right-handed fermion particles (and left-handed anti-particles) have a third component of weakisospin $I_3=0$, and hence do not participate in the weak interaction.~\Cref{tab:fermion_charges} summarizes the electric charge, weak hypercharge, and the third component of the weak isospin for the fermionic fields.
+$\psi_{L(R)}$ is called the left-(right-)handed component of $\psi$, and $\gamma^5\equiv i\gamma^0\gamma^1\gamma^2\gamma^3$ is the fifth gamma matrix. Chirality is a Lorentz-invariant quantity but not a constant of motion, meaning that a pure left-handed state can gain (only for massive fermions) a right-handed component during flight, and vice versa. The left-handed fermions of the same generation form a doublet of the $SU(2)_L$ symmetry. The quark doublets are represented as $Q_L\equiv (u_L\,\, d_L)^T$ and the lepton doublets are represented as $L_L \equiv (\nu_{e,L}\,\, e_L)^T$, with similar definitions for all three generations. The right-handed quarks, such as $u_R$ and $d_R$, and the right-handed charged leptons, such as $e_R$, are singlets of the $SU(2)_L$ symmetry whereas the right-handed neutrinos, $\nu_R$, would not have charges under any interaction. Right-handed neutrinos have not been observed in nature from direct or indirect measurements, and are not part of the SM. Right-handed fermion particles (and left-handed anti-particles) have a third component of weakisospin $I_3=0$, and hence do not participate in the weak interaction.~\Cref{tab:fermion_charges} summarizes the electric charge, weak hypercharge, and the third component of the weak isospin for the fermionic fields.
 
 \begin{table}[!htbp]
     \centering
@@ -61,6 +61,7 @@ The $SU(3)_C$, $SU(2)_L$, and $U(1)_Y$ gauge fields are denoted by $G_\mu^a$ ($a
     \underbrace{\vphantom{\frac{.}{.}}V(\Phi)}_\text{Higgs potential}
     ,
 \end{split}
+\label{eqn:sm_lagrangiagn}
 \end{equation}
 where $G_{\mu\nu}^a$, $W_{\mu\nu}^b$, and $B_{\mu\nu}$ represent the field strength tensors of strong, weak isospin, and weak hypercharge fields, and $h.c.$ stands for the hermitian conjugate of the previous term. For simplicity, the sum over the fermionic fields in not shown, and the Yukawa term is also simplified. The field strength tensor for a field $V$ is given by
 \begin{equation}
@@ -72,16 +73,28 @@ where $i$, $j$, and $k$ are indices corresponding to the number of fields for a 
 \end{equation}
 where $g_s$, $g$, and $g'$ are the coupling constants of the strong, weak isospin, and weak hypercharge fields, respectively, $\lambda$ are the Gell-Mann matrices, and $\sigma$ are the Pauli matrices which form a representation of the respective symmetry groups.
 
-The Higgs mechanism~\cite{PhysRevLett.13.508, PhysRevLett.13.321} is responsible for spontaneous breaking of the EW symmetry, which ascribes masses to three of the four gauge bosons and leaves the photon massless. At low energies, the Higgs field acquires a non-zero vacuum expectation value ($v$) and orients itself along an (arbitrary) direction in the field space. The direction is normally chosen to minimize degrees of freedom, and the Higgs doublet becomes
+The Higgs potential is given by
+\begin{equation}
+    V(\Phi) \equiv \frac{\lambda}{2}(\Phi^\dagger \Phi - v^2)^2,
+\end{equation}
+where $\lambda$ is a free parameter, and $v$ is vacuum expectation value of the Higgs field. The Higgs mechanism~\cite{PhysRevLett.13.508, PhysRevLett.13.321} is responsible for the spontaneous breaking of the EW symmetry, which ascribes masses to three of the four gauge bosons and leaves the photon massless. At low energies, the Higgs field acquires a non-zero vacuum expectation value ($<\Phi^\dagger \Phi> = v^2/2$) from the minimization of the Higgs potential and orients itself along an (arbitrary) direction in the field space. The direction is normally chosen to minimize degrees of freedom, and the Higgs doublet becomes
 \begin{equation}\label{eq:higgs_vev}
     \Phi = \frac{1}{\sqrt{2}}\left(\begin{array}{c} 0 \\ v+h \end{array}\right),
 \end{equation}
-where $h$ is an excitation of the Higgs scalar field. The masses of the gauge bosons (or rather of their mass eigenstates) become
+where $h$ is an excitation of the Higgs scalar field. The Higgs-gauge coupling term in~\cref{eqn:sm_lagrangiagn} then expands to two terms, one giving rise to couplings between $h$ and the electroweak gauge bosons, and the other providing mass terms for the electroweak gauge bosons, spontaneously breaking the symmetry of the $SU(2)$ electroweak interaction. The mass eigenstates are
 \begin{equation}
 \begin{split}
-m_\gamma &= 0, \\
+    W_\mu^\pm &= \frac{1}{\sqrt{2}}(W_\mu^1 \mp iW_\mu^2), \\
+    Z_\mu &= \cos \theta_W W_\mu^3 - \sin \theta_W B_\mu,\text{ and} \\
+    A_\mu &= \sin \theta_W W_\mu^3 + \cos \theta_W B_\mu.
+\end{split}
+\end{equation}
+where $\theta_W=\tan^{-1}(g'/g)$ is the weak mixing angle and $A_\mu$ is the mass eigenstate corresponding to the photon. The masses corresponding to these states are
+\begin{equation}
+\begin{split}
+m_{W^\pm} &= \frac{gv}{2}, \\
 m_Z &= \frac{v}{2}\sqrt{g^2 + g'^2}, \text{ and} \\
-m_{W^\pm} &=  \frac{gv}{2}.
+m_\gamma &= 0.
 \end{split}
 \end{equation}
 After the EW symmetry is broken, the Yukawa term decomposes into two terms: an interaction term between the fermions and the Higgs scalar, the strength of which is proportional to the fermion mass, and a Dirac mass term for all (massive) fermions, which is of the form
@@ -238,7 +251,7 @@ The final state probed in this analysis are the leptonic decays of the HNL ($N \
 \label{fig:feynman}
 \end{figure}
 
-The global $U(1)$ symmetry of the SM gives rise to an approximately conserved quantity during interactions, the total lepton number, given by number of leptons minus the number of anti-leptons. Since the HNLs probed in this analysis have Majorana mass terms in the extended SM Lagrangian, the particle and anti-particle states are identical. Hence, they can give rise to lepton number violating decays as well. Since there are no leptons in the initial state (proton--proton collisions are used), a lepton number conserving decay would lead to a net zero lepton number in the final state as well.~\Cref{fig:feynman_lnc_lnv} shows the Feynman diagrams for lepton number conserving and violating decays. An equal contribution from both decays are considered for all models.
+The SM has an additional approximately conserved quantity during interactions, the total lepton number, given by number of leptons minus the number of anti-leptons. Since the HNLs probed in this analysis have Majorana mass terms in the extended SM Lagrangian, the particle and anti-particle states are identical. Hence, they can give rise to lepton number violating decays as well. Since there are no leptons in the initial state (proton--proton collisions are used), a lepton number conserving decay would lead to a net zero lepton number in the final state as well.~\Cref{fig:feynman_lnc_lnv} shows the Feynman diagrams for lepton number conserving and violating decays. An equal contribution from both decays are considered for all models.
 
 \begin{figure}[ht!]
 \centering
